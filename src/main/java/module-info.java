@@ -3,6 +3,7 @@ module com.otavio.wenews {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
+    requires java.desktop;
 
     opens com.otavio.wenews to javafx.fxml;
     exports com.otavio.wenews;

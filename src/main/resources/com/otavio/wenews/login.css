@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.loginHello {
+    -fx-font-family: Roboto, "Sans Serif Collection";
+    -fx-font-weight: 700;
+}
+
+.loginPayout {
+    -fx-font-family: Roboto, "Sans Serif Collection";
+    -fx-font-weight: 500;
+}
+
+.loginTextField {
+    -fx-background-color: transparent;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2;
+    -fx-border-color: #EBA417;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #ffffff;
+}
+
+.loginTextField:hover {
+    -fx-background-color: transparent;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2;
+    -fx-border-color: #f1bf5b;
+}
+
+.botaoLogar {
+    -fx-background-color: #EBA417;
+    -fx-background-radius: 50px;
+    -fx-text-fill: black;
+    -fx-font-family: Roboto, "Sans Serif Collection";
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+.botaoLogar:hover {
+    -fx-background-color: #f1bf5b;
+    -fx-background-radius: 50px;
+    -fx-font-size: 18px;
+    -fx-text-fill: black;
+    -fx-font-family: Roboto, "Sans Serif Collection";
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+.botaoIncreverse {
+    -fx-font-family: Roboto, "Sans Serif Collection";
+    -fx-background-color: transparent;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 1;
+    -fx-border-color: #EBA417;
+    -fx-cursor: hand;
+}
+
+.botaoIncreverse:hover {
+    -fx-font-family: Roboto, "Sans Serif Collection";
+    -fx-background-color: transparent;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-cursor: hand;
+}
+

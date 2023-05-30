@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.otavio.wenews.controllers.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2f2f33;" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.LoginController">
+   <children>
+      <Label layoutX="65.0" layoutY="33.0" styleClass="loginHello" stylesheets="@login.css" text="Olá, seja bem vindo " textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="79.0" styleClass="loginHello" text="Notícias sobre" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="124.0" styleClass="loginHello" text="o mundo da" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="212.0" layoutY="124.0" styleClass="loginHello" text="Tecnologia" textFill="#61dcfb">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="202.0" styleClass="loginPayout" text="Acesso a todas as nossas publicações" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label layoutX="36.0" layoutY="228.0" styleClass="loginPayout" text="Por R$ 9,90 por mês" textFill="#61dcfb">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="23.0" layoutX="36.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/palmas.png" />
+         </image></ImageView>
+      <TextField layoutX="102.0" layoutY="333.0" prefHeight="26.0" prefWidth="195.0" promptText="E-mail" styleClass="loginTextField" />
+      <TextField layoutX="102.0" layoutY="397.0" prefHeight="26.0" prefWidth="195.0" promptText="Senha" styleClass="loginTextField" />
+      <Button layoutX="56.0" layoutY="501.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="300.0" styleClass="botaoLogar" text="Logar">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="126.0" layoutY="552.0" mnemonicParsing="false" styleClass="botaoIncreverse" text="Não tem conta, Inscreva-se" textFill="WHITE" />
+   </children>
 </AnchorPane>
