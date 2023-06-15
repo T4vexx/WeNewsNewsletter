@@ -40,12 +40,13 @@
          <image>
             <Image url="@../../../images/palmas.png" />
          </image></ImageView>
-      <TextField layoutX="102.0" layoutY="333.0" prefHeight="26.0" prefWidth="195.0" promptText="E-mail" styleClass="loginTextField" />
-      <TextField layoutX="102.0" layoutY="397.0" prefHeight="26.0" prefWidth="195.0" promptText="Senha" styleClass="loginTextField" />
-      <Button layoutX="56.0" layoutY="501.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="300.0" styleClass="botaoLogar" text="Logar">
+      <TextField fx:id="email" layoutX="102.0" layoutY="333.0" prefHeight="26.0" prefWidth="195.0" promptText="E-mail" styleClass="loginTextField" />
+      <TextField fx:id="senha" layoutX="102.0" layoutY="397.0" prefHeight="26.0" prefWidth="195.0" promptText="Senha" styleClass="loginTextField" />
+      <Button fx:id="logar" layoutX="56.0" layoutY="501.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="300.0" styleClass="botaoLogar" text="Logar">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="126.0" layoutY="552.0" mnemonicParsing="false" styleClass="botaoIncreverse" text="Não tem conta, Inscreva-se" textFill="WHITE" />
+      <Button fx:id="changeToRegister" layoutX="126.0" layoutY="552.0" mnemonicParsing="false" styleClass="botaoIncreverse" text="Não tem conta, Inscreva-se" textFill="WHITE" />
+      <Label fx:id="message" layoutX="84.0" layoutY="465.0" textFill="RED" />
    </children>
 </AnchorPane>

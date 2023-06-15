@@ -40,14 +40,15 @@
             <image>
                 <Image url="@../../../images/palmas.png" />
             </image></ImageView>
-        <TextField layoutX="102.0" layoutY="312.0" prefHeight="26.0" prefWidth="195.0" promptText="E-mail" styleClass="loginTextField" />
-        <TextField layoutX="102.0" layoutY="404.0" prefHeight="26.0" prefWidth="195.0" promptText="Senha" styleClass="loginTextField" />
-        <Button layoutX="56.0" layoutY="501.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="300.0" styleClass="botaoLogar" text="Registrar">
+        <TextField fx:id="email" layoutX="102.0" layoutY="312.0" prefHeight="26.0" prefWidth="195.0" promptText="E-mail" styleClass="loginTextField" />
+        <Button fx:id="register" layoutX="56.0" layoutY="501.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="300.0" styleClass="botaoLogar" text="Registrar">
             <font>
                 <Font size="18.0" />
             </font></Button>
-        <Button layoutX="126.0" layoutY="552.0" mnemonicParsing="false" styleClass="botaoIncreverse" text="Já possui conta, Log-in" textFill="WHITE" />
-      <TextField layoutX="102.0" layoutY="270.0" prefHeight="26.0" prefWidth="195.0" promptText="Nome completo" styleClass="loginTextField" />
-      <TextField layoutX="102.0" layoutY="358.0" prefHeight="26.0" prefWidth="195.0" promptText="CPF" styleClass="loginTextField" />
+        <Button fx:id="changeToLogin" layoutX="126.0" layoutY="552.0" mnemonicParsing="false" styleClass="botaoIncreverse" text="Já possui conta, Log-in" textFill="WHITE" />
+      <TextField fx:id="nomeCompleto" layoutX="102.0" layoutY="270.0" prefHeight="26.0" prefWidth="195.0" promptText="Nome completo" styleClass="loginTextField" />
+      <TextField fx:id="cpf" layoutX="102.0" layoutY="358.0" prefHeight="26.0" prefWidth="195.0" promptText="CPF" styleClass="loginTextField" />
+      <PasswordField fx:id="senha" layoutX="102.0" layoutY="404.0" prefHeight="26.0" prefWidth="195.0" promptText="Senha" styleClass="loginTextField" />
+      <Label fx:id="message" layoutX="75.0" layoutY="461.0" textFill="RED" />
     </children>
 </AnchorPane>

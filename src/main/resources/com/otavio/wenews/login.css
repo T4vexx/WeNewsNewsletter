@@ -29,6 +29,7 @@
 .botaoLogar {
     -fx-background-color: #EBA417;
     -fx-background-radius: 50px;
+    -fx-font-size: 18px;
     -fx-text-fill: black;
     -fx-font-family: Roboto, "Sans Serif Collection";
     -fx-font-weight: 700;

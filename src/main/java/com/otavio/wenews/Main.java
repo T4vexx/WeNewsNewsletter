@@ -1,5 +1,8 @@
 package com.otavio.wenews;
 
+import com.otavio.wenews.newsletter.DBFun;
+import com.otavio.wenews.newsletter.Sistema;
+import com.otavio.wenews.newsletter.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +23,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        new Utils();
         launch();
     }
 }
