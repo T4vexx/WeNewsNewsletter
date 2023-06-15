@@ -2,9 +2,10 @@ package com.otavio.wenews.newsletter.employe;
 
 import com.otavio.wenews.newsletter.posts.Artigo;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Jornalista extends Funcionario {
+public class Jornalista extends Funcionario implements Serializable {
 
     private String especialidade;
     private ArrayList<Artigo> noticiasEscritas = new ArrayList<>();
