@@ -2,10 +2,9 @@ package com.otavio.wenews.newsletter.employe;
 
 import com.otavio.wenews.newsletter.Utils;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.io.Serializable;
 
-public abstract class Funcionario {
+public abstract class Funcionario implements Serializable {
     private String name;
     private String email;
     private String password;

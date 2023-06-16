@@ -1,6 +1,9 @@
 package com.otavio.wenews.newsletter;
 
 import com.otavio.wenews.Main;
+import com.otavio.wenews.newsletter.employe.Editor;
+import com.otavio.wenews.newsletter.employe.Escritor;
+import com.otavio.wenews.newsletter.employe.Jornalista;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,6 +14,9 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Utils {
     private static Sistema syst = new Sistema();
@@ -27,6 +33,7 @@ public class Utils {
             root = loader.load();
             Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
             stage.setTitle(title);
+            stage.setResizable(false);
             stage.setScene(new Scene(root, x,y));
             stage.show();
             return loader;
@@ -90,5 +97,33 @@ public class Utils {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static void genereteSuperUsuarios() {
+        PreparedStatement ps1,ps2,ps3;
+        try {
+            Connection conn = DBFun.connectToDb("wenews","postgres","123456");
+            Jornalista jor = new Jornalista("Otavio Jornalista","jornalista@gmail.com",Utils.encryptPassword("123"),22,"Guerras");
+            Escritor esc = new Escritor("Otavio Escritor","escritor@gmail.com",Utils.encryptPassword("123"),22,"Ficção");
+            Editor edt = new Editor("Otavio Editor","editor@gmail.com",Utils.encryptPassword("123"),22,"DCCE");
+
+            ps1 = DBFun.searchDataPrepare(conn,String.format("INSERT INTO funcionarios (name,email,password,idade,funcionario,cargo) VALUES('Otavio Jornalista','jornalista@gmail.com',?,20,?,'jornalista')"));
+            ps2 = DBFun.searchDataPrepare(conn,String.format("INSERT INTO funcionarios (name,email,password,idade,funcionario,cargo) VALUES('Otavio Escritor','escritor@gmail.com',?,20,?,'escritor')"));
+            ps3 = DBFun.searchDataPrepare(conn,String.format("INSERT INTO funcionarios (name,email,password,idade,funcionario,cargo) VALUES('Otavio Editor','editor@gmail.com',?,20,?,'editor')"));
+
+            ps1.setString(1,Utils.encryptPassword("123"));
+            ps1.setBytes(2,Utils.converterClienteParaByte(jor));
+            ps2.setString(1,Utils.encryptPassword("123"));
+            ps2.setBytes(2,Utils.converterClienteParaByte(esc));
+            ps3.setString(1,Utils.encryptPassword("123"));
+            ps3.setBytes(2,Utils.converterClienteParaByte(esc));
+
+            ps1.execute();
+            ps2.execute();
+            ps3.execute();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
 }

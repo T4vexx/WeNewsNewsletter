@@ -2,10 +2,11 @@ package com.otavio.wenews.newsletter.posts;
 
 import com.otavio.wenews.newsletter.employe.Jornalista;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Noticia extends Postagem {
+public class Noticia extends Postagem implements Serializable {
     private String fonte;
     private String categoria;
     private Jornalista proprietario;

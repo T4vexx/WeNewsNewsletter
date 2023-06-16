@@ -1,14 +1,15 @@
 package com.otavio.wenews.newsletter.posts;
 
-import com.otavio.wenews.newsletter.employe.Funcionario;
-
+import com.otavio.wenews.newsletter.employe.Editor;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
 
-public abstract class Postagem {
+public abstract class Postagem implements Serializable {
     private LocalDateTime dataPostagem;
     private LocalDateTime ultimaEdicao;
+    private Editor editadoPor;
     private String titulo;
     private String subTitulo;
     private List<String> paragrafos;
@@ -51,6 +52,14 @@ public abstract class Postagem {
 
     public void addcComentarios(Comentario c) {
         comentarios.add(c);
+    }
+
+    public Editor getEditadoPor() {
+        return editadoPor;
+    }
+
+    public void setEditadoPor(Editor editadoPor) {
+        this.editadoPor = editadoPor;
     }
 }
 

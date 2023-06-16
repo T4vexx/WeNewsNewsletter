@@ -1,0 +1,34 @@
+.loginCliente {
+    -fx-background-color:  #252528;
+    -fx-padding: 10px;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+    -fx-border-color: #EBA417;
+}
+
+.shadowLogo {
+    -fx-effect: dropshadow(three-pass-box, rgba(235, 164, 23, 0.5), 15, 0, 6, 3);
+}
+
+.botaoSeletcTheme {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10px 0;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2;
+    -fx-border-color: #EBA417;
+    -fx-border-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.botaoSeletcTheme:hover {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10px 0;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2;
+    -fx-border-color: #48BB78;
+    -fx-border-radius: 6px;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-cursor: hand;
+}

@@ -1,9 +1,11 @@
 package com.otavio.wenews.newsletter.posts;
 
 import com.otavio.wenews.newsletter.person.User;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Comentario {
+public class Comentario implements Serializable {
     private User usuario;
     private String comentario;
     private LocalDateTime dataPostagem;
