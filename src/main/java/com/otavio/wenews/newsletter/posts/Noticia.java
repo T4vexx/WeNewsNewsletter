@@ -12,12 +12,14 @@ public class Noticia extends Postagem implements Serializable {
     private Jornalista proprietario;
 
 
-    public Noticia(LocalDateTime dataPostagem, String titulo, String subTitulo, List<String> paragrafos, String fonte, String categoria, Jornalista proprietario) {
-        super(dataPostagem, titulo, subTitulo, paragrafos);
+    public Noticia(LocalDateTime dataPostagem, String titulo, String subTitulo, String fonte, String categoria, Jornalista proprietario) {
+        super(dataPostagem, titulo, subTitulo);
         this.fonte = fonte;
         this.categoria = categoria;
         this.proprietario = proprietario;
     }
+
+    public Noticia() {}
 
     public String getFonte() {
         return fonte;

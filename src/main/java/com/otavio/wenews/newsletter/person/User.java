@@ -15,7 +15,7 @@ public class User {
         this.name = name;
         this.email = email;
         this.cpf = cpf;
-        this.password = Utils.encryptPassword(password);
+        this.password = password;
         isUserSubscriber = false;
     }
 
@@ -62,6 +62,7 @@ public class User {
 
     public boolean validarSenha(String senha) {
         String senhaEncryptada = Utils.encryptPassword(senha);
+        String test = this.getPassword();
         return senhaEncryptada.equals(this.getPassword());
     }
 }

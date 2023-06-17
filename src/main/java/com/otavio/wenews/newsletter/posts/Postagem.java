@@ -13,13 +13,19 @@ public abstract class Postagem implements Serializable {
     private String titulo;
     private String subTitulo;
     private List<String> paragrafos;
-    private ArrayList<Comentario> comentarios = new ArrayList<>();
+    private ArrayList<Comentario> comentarios;
 
-    public Postagem(LocalDateTime dataPostagem, String titulo, String subTitulo, List<String> paragrafos) {
+    public Postagem(LocalDateTime dataPostagem, String titulo, String subTitulo) {
         this.dataPostagem = dataPostagem;
         this.titulo = titulo;
         this.subTitulo = subTitulo;
-        this.paragrafos = paragrafos;
+        paragrafos = new ArrayList<>();
+        comentarios = new ArrayList<>();
+    }
+
+    public Postagem() {
+        paragrafos = new ArrayList<>();
+        comentarios = new ArrayList<>();
     }
 
     public LocalDateTime getUltimaEdicao() {
@@ -60,6 +66,24 @@ public abstract class Postagem implements Serializable {
 
     public void setEditadoPor(Editor editadoPor) {
         this.editadoPor = editadoPor;
+    }
+
+    public void addNewParagraf(String par) {
+        if(par != null || !par.equals("")) {
+            paragrafos.add(par);
+        }
+    }
+
+    public void setDataPostagem(LocalDateTime dataPostagem) {
+        this.dataPostagem = dataPostagem;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setSubTitulo(String subTitulo) {
+        this.subTitulo = subTitulo;
     }
 }
 

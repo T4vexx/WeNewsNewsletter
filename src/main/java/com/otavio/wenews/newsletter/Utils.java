@@ -9,14 +9,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class Utils {
     private static Sistema syst = new Sistema();
@@ -36,6 +35,7 @@ public class Utils {
             stage.setResizable(false);
             stage.setScene(new Scene(root, x,y));
             stage.show();
+            stage.centerOnScreen();
             return loader;
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,7 +102,7 @@ public class Utils {
     public static void genereteSuperUsuarios() {
         PreparedStatement ps1,ps2,ps3;
         try {
-            Connection conn = DBFun.connectToDb("wenews","postgres","123456");
+            Connection conn = DBFun.connectToDb("wenews","postgres","1163");
             Jornalista jor = new Jornalista("Otavio Jornalista","jornalista@gmail.com",Utils.encryptPassword("123"),22,"Guerras");
             Escritor esc = new Escritor("Otavio Escritor","escritor@gmail.com",Utils.encryptPassword("123"),22,"Ficção");
             Editor edt = new Editor("Otavio Editor","editor@gmail.com",Utils.encryptPassword("123"),22,"DCCE");

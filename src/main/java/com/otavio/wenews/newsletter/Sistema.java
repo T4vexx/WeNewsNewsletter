@@ -15,10 +15,9 @@ import java.time.LocalDateTime;
 
 public class Sistema {
     private Connection con;
-    private UserPainel up = null;
 
     public Sistema() {
-        con = DBFun.connectToDb("wenews","postgres","123456");
+        con = DBFun.connectToDb("wenews","postgres","1163");
     }
 
     public void login(String emailLogin, String senha, ActionEvent event) throws LoginMissException {
@@ -46,7 +45,7 @@ public class Sistema {
                 if(!meuUser.validarSenha(senha)) {
                     throw new LoginMissException("Erro no login | Email ou senha não coincidentes");
                 }
-                up = new UserPainel(meuUser,event);
+                new UserPainel(meuUser,event);
             } else {
                 PreparedStatement ps2 = DBFun.searchDataPrepare(con,"SELECT * FROM funcionarios WHERE email = ?");
                 ps2.setString(1,emailLogin);
@@ -89,15 +88,17 @@ public class Sistema {
             ps2.setString(4,Utils.encryptPassword(senha));
             ps2.setBoolean(5,false);
             ps2.setBytes(6,null);
-            if(!ps2.execute()) {
-                throw new LoginMissException("Erro no registro");
-            }
+            ps2.execute();
         } catch (SQLException ex) {
             throw new LoginMissException("Erro no registro | Erro interno");
         }
     };
 
-    public UserPainel getUp() {
-        return up;
+    public void sair(ActionEvent e) {
+        Utils.changeScene(e,"login","WeNews | Log-in page",400,600);
+    }
+
+    public Connection getCon() {
+        return con;
     }
 }

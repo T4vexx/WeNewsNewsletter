@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="222.0" prefWidth="974" styleClass="preview" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="com.otavio.wenews.controllers.PostagemPreviewController">
+   <children>
+      <Label fx:id="titulo" layoutX="14.0" layoutY="6.0" prefHeight="75.0" prefWidth="949.0" text="Ciclone no RS: sobe para oito o número de mortos; 19 pessoas estão desaparecidas, diz Defesa Civil" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Poppins Black" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="subtitulo" layoutX="13.0" layoutY="82.0" prefHeight="90.0" prefWidth="949.0" text="De acordo com a Defesa Civil, duas mortes foram registradas em São Leopoldo, uma em Novo Hamburgo, uma em Maquiné, uma em Gravataí, uma em Caraá, uma em Bom Princípio e uma em São Sebastião do Caí. Seis pessoas estão desaparecidas em Caraá e duas em Maquiné. Há outros 11 desaparecidos, mas detalhes não foram divulgados." textFill="#bfbfbf" wrapText="true">
+         <font>
+            <Font name="Poppins Medium" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="data" layoutX="779.0" layoutY="188.0" text="12 de dezembro de 2023" textFill="#f2f2f2">
+         <font>
+            <Font name="Poppins Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="autor" layoutX="13.0" layoutY="188.0" text="Otávio Jornalista" textFill="WHITE">
+         <font>
+            <Font name="Poppins Medium" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
