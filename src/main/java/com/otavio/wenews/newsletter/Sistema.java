@@ -17,7 +17,7 @@ public class Sistema {
     private Connection con;
 
     public Sistema() {
-        con = DBFun.connectToDb("wenews","postgres","1163");
+        con = DBFun.connectToDb("wenews","postgres","123456");
     }
 
     public void login(String emailLogin, String senha, ActionEvent event) throws LoginMissException {
