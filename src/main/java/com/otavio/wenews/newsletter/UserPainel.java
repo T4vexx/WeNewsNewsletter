@@ -16,9 +16,31 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * UserPainel
+ * Esta classe são os métodos que cuidam de todas as funções de um usuário
+ * Possui um atributo myUser que armazena as informações de uma usuário
+ * Quando a classe é instaciada ela cria a página Home de usúario
+ * @see com.otavio.wenews.controllers.users_controller.UserController;
+ * @see com.otavio.wenews.exceptions.LoginMissException;
+ * @see com.otavio.wenews.newsletter.person.Subscriber;
+ * @see com.otavio.wenews.newsletter.person.User;
+ * @see com.otavio.wenews.newsletter.posts.Artigo;
+ * @see com.otavio.wenews.newsletter.posts.Comentario;
+ * @see com.otavio.wenews.newsletter.posts.Noticia;
+ * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class UserPainel {
     private User myUser;
 
+    /**
+     * Construtor que inicia o usuário e cria a cena da Home de usuário
+     * Envia os dados para o controllador
+     * @param myUser
+     * @param event
+     */
     public UserPainel(User myUser, ActionEvent event) {
         this.myUser = myUser;
         FXMLLoader loader = Utils.changeScene(event,"user","WeNews | Home page",1220,700);
@@ -26,6 +48,10 @@ public class UserPainel {
         userController.setUser(myUser,this);
     }
 
+    /**
+     * Método que busca no banco de dados todos os posts e retorna esse posts
+     * @return retorna um array list de posts
+     */
     public ArrayList<Postagem> loadAllPosts() {
         PreparedStatement ps;
         ResultSet rs;

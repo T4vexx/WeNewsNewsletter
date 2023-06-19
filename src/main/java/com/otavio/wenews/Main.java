@@ -16,7 +16,6 @@ import java.io.IOException;
  * @see com.otavio.wenews.newsletter.DBFun
  * @see com.otavio.wenews.newsletter.Sistema
  * @see com.otavio.wenews.newsletter.Utils
- * @see javafx.application.Application
  * @author Otavio Augusto teixiera
  * @version 1.0
  */

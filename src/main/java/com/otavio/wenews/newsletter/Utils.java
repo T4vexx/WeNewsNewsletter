@@ -17,13 +17,39 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
+/**
+ * Utils
+ * Essa classe guarda diversos métodos utils para ser usado no código
+ * Possui um atributo statico Sistema syst que guarda um sistema para poder ser chamado nos controllers
+ * Possui métodos que, converte os cliente para bytes, encryptar a senha e gerar super usuarios
+ * @see com.otavio.wenews.newsletter.employe.Editor
+ * @see com.otavio.wenews.newsletter.employe.Escritor
+ * @see com.otavio.wenews.newsletter.employe.Jornalista
+ * @see com.otavio.wenews.Main
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class Utils {
     private static Sistema syst = new Sistema();
 
+    /**
+     * Método que retorna um sistema
+     * @return retorna um sitema
+     */
     public static Sistema getSistema() {
         return syst;
     }
 
+    /**
+     * Método para mudar de uma cena para uma nova cena e retornar o loader para pegar o controlador
+     * @param event evento dando quer mudar a cena
+     * @param fxmlFile Nome do arquivo .fxml da nova cena
+     * @param title titulo da nova cena
+     * @param x tamanho de largura da página
+     * @param y tamanho de altura da página
+     * @return return um FXMLLoader para poder usar um controller mais pra frente
+     */
     public static FXMLLoader changeScene(ActionEvent event, String fxmlFile, String title,int x, int y) {
         Parent root = null;
 
@@ -43,6 +69,12 @@ public class Utils {
         }
     }
 
+    /**
+     * Método que recebe um objeto do tipo T e transforma ela para um array de bytes para serem usados no banco de dados
+     * @param cliente Objeto para ser serizalizado em um array de bytes
+     * @return retorna um array de bytes
+     * @param <T> Tipo do objeto para ser Serializado
+     */
     public static <T> byte[] converterClienteParaByte(T cliente) {
         try {
             ByteArrayOutputStream bao = new ByteArrayOutputStream();
@@ -58,6 +90,12 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Método que recebe um Array de bytes transforma ela para um objeto do tipo T
+     * @param clienteAsByte Um array de bytes que é um objeto serializado
+     * @return retorna um objeto deserializado
+     * @param <T> Tipo do objeto para ser deserializado
+     */
     public static <T> T converterByteParaCliente(byte[] clienteAsByte) {
         try {
             ByteArrayInputStream bao = new ByteArrayInputStream(clienteAsByte);
@@ -73,6 +111,11 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Método que recebe uma string e encrypta essa string em MD5
+     * @param password uma string para ser encryptada
+     * @return retorna um string encryptada
+     */
     public static String encryptPassword(String password) {
         try {
             /* MessageDigest instance for MD5. */
@@ -99,6 +142,9 @@ public class Utils {
         }
     }
 
+    /**
+     * Método que gera os 3 superusuarios, um jornalista que pode escrever uma noticia, um Escritor que pode escrever um artigo e um editor que pode editar um artigo e uma noticia
+     */
     public static void genereteSuperUsuarios() {
         PreparedStatement ps1,ps2,ps3,ps4;
         ResultSet rs;

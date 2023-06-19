@@ -7,8 +7,7 @@ import java.time.LocalDateTime;
  * Subscriber
  * Esta classe representa um assinante de uma newsletter.
  * Ela implementa a interface Serializable para permitir a serialização dos objetos.
- * Ela possui atributos para armazenar a data da primeira assinatura, a data de expiração,
- * e um indicador booleano para verificar se a assinatura está expirada ou não.
+ * Ela possui atributos para armazenar a data da primeira assinatura, a data de expiração, e um indicador booleano para verificar se a assinatura está expirada ou não.
  * Ela também possui métodos para obter e alterar esses atributos, bem como para renovar a assinatura.
  * @author Otávio Augusto Teixeira
  * @version 1.0
