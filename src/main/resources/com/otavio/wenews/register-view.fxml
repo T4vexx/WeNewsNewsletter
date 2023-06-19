@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2f2f33;" stylesheets="@login.css"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.users_controller.RegisterController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2f2f33;" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.users_controller.RegisterController">
     <children>
         <Label layoutX="65.0" layoutY="33.0" styleClass="loginHello" stylesheets="@login.css" text="Olá, seja bem vindo " textFill="WHITE">
             <font>
@@ -50,5 +50,6 @@
       <TextField fx:id="cpf" layoutX="102.0" layoutY="358.0" prefHeight="26.0" prefWidth="195.0" promptText="CPF" styleClass="loginTextField" />
       <PasswordField fx:id="senha" layoutX="102.0" layoutY="404.0" prefHeight="26.0" prefWidth="195.0" promptText="Senha" styleClass="loginTextField" />
       <Label fx:id="message" layoutX="75.0" layoutY="461.0" textFill="RED" />
+      <Label fx:id="message1" layoutX="20.0" layoutY="476.0" textFill="RED" />
     </children>
 </AnchorPane>
