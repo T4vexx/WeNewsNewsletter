@@ -1,0 +1,21 @@
+fazer verificação de tamanho de palavra na hora de escrever os artigos 
+titulo 130 caracteres
+subtitulo 240 caracteres
+adcionar comentario pane final dos array da lista
+pagina de user para mudar a senha
+paragrafo so com 625 caracteres
+
+-------- Itinerario
+-✅- Logica de comentarios 
+-✅- Tela de Usuario ver informações, renovar subscrição e ver tempo de esgotamento de subscrição
+-✅- Adicionar o post no escritor e no jornalista
+-✅- Acabar Editor
+-✅- Verificaçoes de entrada (Regex de senha, cpf, email, tamanho dos titulos, subtitulos e outras informações)
+- X - Javadoc 
+- X - Fazer arquivo que explica como usar o projeto
+- X - Fazer a apresentação
+
+------- Melhorias possiveis
+- Likes
+- Comentarios dentro de comentarios
+- Conseguir editar o proprio comentario e o editor poder excluir o comentario das pessoas
