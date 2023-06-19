@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1220.0" style="-fx-background-color: #2f2f33;" stylesheets="@funcionarios.css"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.EscritorJornalistaController">
+<AnchorPane prefHeight="700.0" prefWidth="1220.0" style="-fx-background-color: #2f2f33;" stylesheets="@funcionarios.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="com.otavio.wenews.controllers.employes_controller.EscritorJornalistaController">
     <children>
         <Separator layoutY="70.0" prefWidth="1220.0" />
         <Label layoutX="110.0" layoutY="14.0" styleClass="shadowLogo" text="WeNews" textFill="WHITE">
@@ -25,7 +22,7 @@
                 <Font name="Roboto Black" size="16.0" />
             </font>
         </Button>
-        <BorderPane fx:id="bp" layoutX="109.0" layoutY="80.0" prefHeight="609.0" prefWidth="974.0">
+        <BorderPane fx:id="bp2" layoutX="109.0" layoutY="80.0" prefHeight="609.0" prefWidth="974.0">
          <center>
             <BorderPane fx:id="bp" prefHeight="609.0" prefWidth="982.0" BorderPane.alignment="CENTER" />
          </center></BorderPane>

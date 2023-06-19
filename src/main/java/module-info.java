@@ -8,6 +8,10 @@ module com.otavio.wenews {
 
     opens com.otavio.wenews to javafx.fxml;
     exports com.otavio.wenews;
-    opens com.otavio.wenews.controllers to javafx.fxml;
-    exports com.otavio.wenews.controllers;
+    exports com.otavio.wenews.controllers.users_controller;
+    opens com.otavio.wenews.controllers.users_controller to javafx.fxml;
+    exports com.otavio.wenews.controllers.employes_controller;
+    opens com.otavio.wenews.controllers.employes_controller to javafx.fxml;
+    exports com.otavio.wenews.controllers.posts_controller;
+    opens com.otavio.wenews.controllers.posts_controller to javafx.fxml;
 }

@@ -1,11 +1,8 @@
-package com.otavio.wenews.controllers;
+package com.otavio.wenews.controllers.users_controller;
 
 import com.otavio.wenews.exceptions.LoginMissException;
-import com.otavio.wenews.newsletter.DBFun;
 import com.otavio.wenews.newsletter.Sistema;
 import com.otavio.wenews.newsletter.Utils;
-import com.otavio.wenews.newsletter.person.Subscriber;
-import com.otavio.wenews.newsletter.person.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,9 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {

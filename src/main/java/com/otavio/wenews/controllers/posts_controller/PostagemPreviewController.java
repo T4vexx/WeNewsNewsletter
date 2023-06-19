@@ -1,4 +1,4 @@
-package com.otavio.wenews.controllers;
+package com.otavio.wenews.controllers.posts_controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

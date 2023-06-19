@@ -1,8 +1,10 @@
 package com.otavio.wenews.newsletter;
 
-import com.otavio.wenews.controllers.EscritorJornalistaController;
-import com.otavio.wenews.exceptions.LoginMissException;
+import com.otavio.wenews.controllers.employes_controller.EditorController;
+import com.otavio.wenews.controllers.employes_controller.EscritorJornalistaController;
+import com.otavio.wenews.exceptions.NonexistentPostError;
 import com.otavio.wenews.exceptions.WriteNewPostError;
+import com.otavio.wenews.newsletter.employe.Editor;
 import com.otavio.wenews.newsletter.employe.Escritor;
 import com.otavio.wenews.newsletter.employe.Funcionario;
 import com.otavio.wenews.newsletter.employe.Jornalista;
@@ -11,22 +13,26 @@ import com.otavio.wenews.newsletter.posts.Noticia;
 import com.otavio.wenews.newsletter.posts.Postagem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class FuncionarioPainel<T extends Funcionario> {
-    private T MyFun;
+    private T myFun;
 
     public FuncionarioPainel(T MyFun, ActionEvent event) {
-        this.MyFun = MyFun;
+        this.myFun = MyFun;
         if(MyFun instanceof Jornalista || MyFun instanceof Escritor) {
             FXMLLoader loader = Utils.changeScene(event,"jornalistaescritor","WeNews | Write Post page",1220, 700);
             EscritorJornalistaController escJorCont = loader.getController();
             escJorCont.setMyFun(MyFun,this);
-        } else {
-            Utils.changeScene(event,"editor","WeNews | Edite Article page",1220, 700);
+        } else if (myFun instanceof Editor) {
+            FXMLLoader loader = Utils.changeScene(event,"editor","WeNews | Edite Article page",1220, 700);
+            EditorController edit = loader.getController();
+            edit.setData(this,myFun);
         }
     }
 
@@ -47,14 +53,91 @@ public class FuncionarioPainel<T extends Funcionario> {
             ps.setBytes(1, Utils.converterClienteParaByte(post));
             if(post instanceof Noticia) {
                 ps.setString(2, "noticia");
+                ((Jornalista) myFun).addNoticiasEscritas((Noticia) post);
             } else if (post instanceof Artigo) {
                 ps.setString(2, "artigo");
+                ((Escritor) myFun).setArtigosEscritos((Artigo) post);
             }
             ps.setString(3, post.getTitulo());
             ps.execute();
             return true;
         } catch (SQLException ex) {
             throw new WriteNewPostError("Erro no registro | Erro interno | Tente novamente mais tarde !");
+        }
+    }
+
+    public ArrayList<Postagem> loadAllPosts() {
+        PreparedStatement ps;
+        ResultSet rs;
+        Sistema sis = Utils.getSistema();
+        ArrayList<Postagem> posts = new ArrayList<>();
+        try {
+            ps = DBFun.searchDataPrepare(sis.getCon(),"SELECT * FROM posts");
+            rs = ps.executeQuery();
+            while(rs.next()) {
+
+                if(rs.getString(3).equals("noticia")) {
+                    Noticia not = Utils.converterByteParaCliente(rs.getBytes(2));
+                    posts.add(not);
+                } else if(rs.getString(3).equals("artigo")) {
+                    Artigo art = Utils.converterByteParaCliente(rs.getBytes(2));
+                    posts.add(art);
+                }
+            }
+            return posts;
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
+
+    public void excludePost(Postagem post) throws NonexistentPostError {
+        PreparedStatement ps;
+        ResultSet rs;
+        Sistema sis = Utils.getSistema();
+        try {
+            ps = DBFun.searchDataPrepare(sis.getCon(),"SELECT * FROM posts WHERE titulo = ?");
+            ps.setString(1,post.getTitulo());
+            rs = ps.executeQuery();
+            if(!rs.next()) {
+                throw new NonexistentPostError("Post nao encontrado | Post já deletado ou inexistente");
+            }
+            ps = DBFun.searchDataPrepare(sis.getCon(),"DELETE FROM posts WHERE titulo = ?");
+            ps.setString(1,post.getTitulo());
+            ps.execute();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void editePost(Postagem newPost, Postagem oldPost) throws NonexistentPostError {
+        PreparedStatement ps;
+        ResultSet rs;
+        Sistema sis = Utils.getSistema();
+        int numero;
+        try {
+            ps = DBFun.searchDataPrepare(sis.getCon(),"SELECT * FROM posts WHERE titulo = ?");
+            ps.setString(1,oldPost.getTitulo());
+            rs = ps.executeQuery();
+            if(!rs.next()) {
+                throw new NonexistentPostError("Post nao encontrado | Post já deletado ou inexistente");
+            }
+            numero = rs.getInt(1);
+            ps = DBFun.searchDataPrepare(sis.getCon(),"DELETE FROM posts WHERE titulo = ?");
+            ps.setString(1,oldPost.getTitulo());
+            ps.execute();
+
+            ps = DBFun.searchDataPrepare(sis.getCon(),"INSERT INTO posts (id,post,tipo,titulo) VALUES(?,?,?,?)");
+            ps.setInt(1,numero);
+            ps.setBytes(2,Utils.converterClienteParaByte(newPost));
+            if(newPost instanceof Noticia) {
+                ps.setString(3,"noticia");
+            } else if(newPost instanceof Artigo) {
+                ps.setString(3,"artigo");
+            }
+            ps.setString(4,newPost.getTitulo());
+            ps.execute();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.otavio.wenews.controllers;
+package com.otavio.wenews.controllers.employes_controller;
 
 import com.otavio.wenews.exceptions.WriteNewPostError;
 import com.otavio.wenews.newsletter.FuncionarioPainel;

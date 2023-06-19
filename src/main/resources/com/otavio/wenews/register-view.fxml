@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2f2f33;" stylesheets="@login.css"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.RegisterController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2f2f33;" stylesheets="@login.css"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.users_controller.RegisterController">
     <children>
         <Label layoutX="65.0" layoutY="33.0" styleClass="loginHello" stylesheets="@login.css" text="Olá, seja bem vindo " textFill="WHITE">
             <font>

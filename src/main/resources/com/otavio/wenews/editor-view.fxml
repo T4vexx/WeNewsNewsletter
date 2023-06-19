@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.otavio.wenews.controllers.EditorController"
-            prefHeight="400.0" prefWidth="600.0"
-            style="-fx-background-color: #2f2f33;">
-
+<AnchorPane prefHeight="700.0" prefWidth="1220.0" style="-fx-background-color: #2f2f33;" stylesheets="@funcionarios.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.employes_controller.EditorController">
+    <children>
+        <Separator layoutY="70.0" prefWidth="1220.0" />
+        <Label layoutX="110.0" layoutY="14.0" styleClass="shadowLogo" text="WeNews" textFill="WHITE">
+            <font>
+                <Font name="Roboto Black" size="30.0" />
+            </font>
+        </Label>
+        <Label fx:id="nameUser" alignment="CENTER" contentDisplay="RIGHT" ellipsisString="+" layoutX="869.0" layoutY="12.0" maxWidth="220.0" minWidth="214.0" styleClass="loginCliente" text="Otávio Augusto" textFill="WHITE">
+            <font>
+                <Font name="Roboto Medium" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="sair" layoutX="790.0" layoutY="18.0" mnemonicParsing="false" styleClass="botaoSeletcTheme" text="Sair" textFill="WHITE">
+            <font>
+                <Font name="Roboto Black" size="16.0" />
+            </font>
+        </Button>
+        <BorderPane fx:id="listViews" layoutX="101.0" layoutY="73.0" prefHeight="609.0" prefWidth="1005.0" stylesheets="@posts.css" />
+      <Button fx:id="voltar" layoutX="712.0" layoutY="19.0" mnemonicParsing="false" styleClass="botaoSeletcTheme" text="Voltar" textFill="WHITE">
+         <font>
+            <Font name="Roboto Black" size="16.0" />
+         </font>
+      </Button>
+    </children>
 </AnchorPane>

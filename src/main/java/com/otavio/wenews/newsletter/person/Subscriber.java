@@ -9,9 +9,9 @@ public class Subscriber implements Serializable {
     private boolean isExpired = false;
 
 
-    public Subscriber(LocalDateTime firstSubscription, LocalDateTime expiresIn) {
-        this.firstSubscription = firstSubscription;
-        this.expiresIn = expiresIn;
+    public Subscriber() {
+        this.firstSubscription = LocalDateTime.now();
+        this.expiresIn = LocalDateTime.now().plusDays(30);
         isExpired = false;
     }
 
@@ -24,10 +24,16 @@ public class Subscriber implements Serializable {
     }
 
     public boolean isExpired() {
-        return isExpired;
+        if(expiresIn.isAfter(LocalDateTime.now())) {
+            this.isExpired = true;
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void setExpired(boolean expired) {
-        isExpired = expired;
+    public void renew() {
+        this.isExpired = false;
+        expiresIn = LocalDateTime.now().plusDays(30);
     }
 }

@@ -1,4 +1,4 @@
-package com.otavio.wenews.controllers;
+package com.otavio.wenews.controllers.employes_controller;
 
 import com.otavio.wenews.Main;
 import com.otavio.wenews.newsletter.FuncionarioPainel;
@@ -25,7 +25,7 @@ public class EscritorJornalistaController implements Initializable {
     private Funcionario myFun;
     private FuncionarioPainel funPainel;
     @FXML
-    private BorderPane bp;
+    private BorderPane bp2;
     @FXML
     private Label nameUser;
     @FXML
@@ -39,6 +39,7 @@ public class EscritorJornalistaController implements Initializable {
             public void handle(ActionEvent event) {
                 Sistema sis = Utils.getSistema();
                 myFun = null;
+                funPainel = null;
                 sis.sair(event);
             }
         });
@@ -70,7 +71,7 @@ public class EscritorJornalistaController implements Initializable {
             e.printStackTrace();
         }
 
-        bp.setCenter(root);
+        bp2.setCenter(root);
         return loader;
     }
 }

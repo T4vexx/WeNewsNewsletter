@@ -7,6 +7,17 @@
     -fx-border-color: #EBA417;
 }
 
+.loginCliente:hover {
+    -fx-background-color:  #252528;
+    -fx-padding: 10px;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+    -fx-border-color: #EBA417;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
 .shadowLogo {
     -fx-effect: dropshadow(three-pass-box, rgba(235, 164, 23, 0.5), 15, 0, 6, 3);
 }

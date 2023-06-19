@@ -2,7 +2,9 @@ package com.otavio.wenews.newsletter.person;
 
 import com.otavio.wenews.newsletter.Utils;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private String name;
     private String email;

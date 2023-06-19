@@ -1,6 +1,7 @@
 package com.otavio.wenews.newsletter.employe;
 
 import com.otavio.wenews.newsletter.posts.Artigo;
+import com.otavio.wenews.newsletter.posts.Noticia;
 
 import java.io.Serializable;
 import java.util.*;
@@ -8,7 +9,7 @@ import java.util.*;
 public class Jornalista extends Funcionario implements Serializable {
 
     private String especialidade;
-    private ArrayList<Artigo> noticiasEscritas = new ArrayList<>();
+    private ArrayList<Noticia> noticiasEscritas = new ArrayList<>();
 
     public Jornalista(String name, String email, String password, int idade, String especialidade) {
         super(name, email, password, idade);
@@ -19,11 +20,11 @@ public class Jornalista extends Funcionario implements Serializable {
         return especialidade;
     }
 
-    public ArrayList<Artigo> getNoticiasEscritas() {
+    public ArrayList<Noticia> getNoticiasEscritas() {
         return noticiasEscritas;
     }
 
-    public void addNoticiasEscritas(Artigo noticiasEscritas) {
+    public void addNoticiasEscritas(Noticia noticiasEscritas) {
         this.noticiasEscritas.add(noticiasEscritas);
     }
 }

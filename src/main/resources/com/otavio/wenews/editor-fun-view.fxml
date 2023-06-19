@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="609.0" prefWidth="974.0" style="-fx-background-color: #2f2f33;" stylesheets="@funcionarios.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.employes_controller.EditorEditarController">
+    <children>
+        <Pane layoutX="14.0" layoutY="14.0" prefHeight="579.0" prefWidth="942.0" style="-fx-background-color: #252528; -fx-background-radius: 10px;">
+            <children>
+                <Label fx:id="paragrafoLabel" layoutX="365.0" layoutY="14.0" text="Corpo do Artigo/Notícia" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Medium" size="24.0" />
+                    </font>
+                </Label>
+                <Pane layoutX="14.0" layoutY="14.0">
+                    <children>
+                        <Label text="Título" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto Medium" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="titulo" layoutY="43.0" prefHeight="43.0" prefWidth="225.0" styleClass="inputTexts" />
+                    </children>
+                </Pane>
+                <Pane layoutX="14.0" layoutY="162.0">
+                    <children>
+                        <Label text="SubTítulo" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto Medium" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="subtitulo" layoutY="43.0" prefHeight="43.0" prefWidth="225.0" styleClass="inputTexts" />
+                    </children>
+                </Pane>
+                <Pane layoutX="14.0" layoutY="312.0">
+                    <children>
+                        <Label fx:id="opcional1Label" text="Tema/categoria" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto Medium" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="opcional1" layoutY="51.0" prefHeight="43.0" prefWidth="225.0" styleClass="inputTexts" />
+                    </children>
+                </Pane>
+                <Pane layoutX="14.0" layoutY="463.0">
+                    <children>
+                        <Label fx:id="opcional2Label" text="Protagonistas/Fonte" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto Medium" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="opcional2" layoutY="43.0" prefHeight="43.0" prefWidth="225.0" styleClass="inputTexts" />
+                    </children>
+                </Pane>
+                <TextArea fx:id="paragrafo" layoutX="365.0" layoutY="57.0" prefHeight="420.0" prefWidth="554.0" style="-fx-background-color: transparent;" styleClass="inputTexts" />
+                <Button fx:id="enviar" layoutX="365.0" layoutY="506.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="126.0" styleClass="buttonsFun" text="Editar" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Black" size="16.0" />
+                    </font>
+                </Button>
+                <Label fx:id="message" layoutX="14.0" layoutY="557.0" />
+            <Button fx:id="cancelar" layoutX="793.0" layoutY="506.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="126.0" styleClass="buttonsFunCancelar" text="Deletar" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Black" size="16.0" />
+               </font>
+            </Button>
+            </children>
+        </Pane>
+    </children>
+
+</AnchorPane>

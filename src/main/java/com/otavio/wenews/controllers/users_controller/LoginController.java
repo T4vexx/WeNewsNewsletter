@@ -1,4 +1,4 @@
-package com.otavio.wenews.controllers;
+package com.otavio.wenews.controllers.users_controller;
 
 import com.otavio.wenews.exceptions.LoginMissException;
 import com.otavio.wenews.newsletter.Sistema;

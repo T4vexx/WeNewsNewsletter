@@ -1,0 +1,37 @@
+.inputInfos {
+    -fx-background-color: transparent;
+    -fx-border-style: hidden hidden solid solid;
+    -fx-border-width: 2;
+    -fx-border-color:  #EBA417;
+    -fx-border-radius: 6px;
+    -fx-text-fill: white;
+}
+
+.botaoTrocarSenha {
+    -fx-background-color: #18181b;
+    -fx-background-radius: 20px;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-border-color: #EBA417;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+}
+
+.botaoTrocarSenha:focused,
+.botaoTrocarSenha:hover {
+    -fx-background-color: #18181b;
+    -fx-background-radius: 20px;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-border-color: #f3c872;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}

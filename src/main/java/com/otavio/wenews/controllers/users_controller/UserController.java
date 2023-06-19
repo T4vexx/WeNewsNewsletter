@@ -1,6 +1,8 @@
-package com.otavio.wenews.controllers;
+package com.otavio.wenews.controllers.users_controller;
 
 import com.otavio.wenews.Main;
+import com.otavio.wenews.controllers.posts_controller.PostController;
+import com.otavio.wenews.controllers.posts_controller.PostagemPreviewController;
 import com.otavio.wenews.newsletter.Sistema;
 import com.otavio.wenews.newsletter.UserPainel;
 import com.otavio.wenews.newsletter.Utils;
@@ -15,9 +17,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import java.util.Locale;
@@ -34,15 +37,13 @@ public class UserController implements Initializable {
     private User myUser;
     private ObservableList<Pane> list;
     @FXML
-    private Label nameUser;
+    private Button nameUser;
     @FXML
     private Button sair;
     @FXML
     private Button noticias;
     @FXML
     private Button artigos;
-    @FXML
-    private Button subscriber;
     @FXML
     private BorderPane bp;
 
@@ -54,8 +55,8 @@ public class UserController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 artigos.getStyleClass().add("botaoSelected");
-                noticias.getStyleClass().remove("botaoSelected");
                 loadList("artigo");
+                noticias.getStyleClass().remove("botaoSelected");
             }
         });
 
@@ -68,11 +69,29 @@ public class UserController implements Initializable {
             }
         });
 
+        nameUser.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Parent root = null;
+                FXMLLoader loader = null;
+                try{
+                    loader = new FXMLLoader(Main.class.getResource("user-info-view.fxml"));
+                    root = loader.load();
+                    UserInfosController userInfos = loader.getController();
+                    userInfos.setData(us,myUser);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                bp.setCenter(root);
+            }
+        });
+
         sair.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Sistema sis = Utils.getSistema();
                 myUser = null;
+                us = null;
                 sis.sair(event);
             }
         });
@@ -81,9 +100,6 @@ public class UserController implements Initializable {
     public void setUser(User myUser,UserPainel us) {
         this.myUser = myUser;
         this.us = us;
-        if(myUser.isUserSubscriber()) {
-            subscriber.setVisible(false);
-        }
         posts = us.loadAllPosts();
         nameUser.setText(myUser.getName());
         noticias.fire();
@@ -99,12 +115,44 @@ public class UserController implements Initializable {
                 if(postagem instanceof Noticia && tipo.equals("noticia")) {
                     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("post-preview.fxml"));
                     Pane pane = fxmlLoader.load();
+                    pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            Parent root = null;
+                            FXMLLoader loader = null;
+                            try{
+                                loader = new FXMLLoader(Main.class.getResource("post-view.fxml"));
+                                root = loader.load();
+                                PostController postCont = loader.getController();
+                                postCont.setData(us,myUser,postagem);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            bp.setCenter(root);
+                        }
+                    });
                     PostagemPreviewController postagemController = fxmlLoader.getController();
                     postagemController.setDataPostPreview(postagem.getTitulo(),postagem.getSubTitulo(),postagem.getDataPostagem().format(formatter),((Noticia) postagem).getProprietario().getName());
                     list.add(pane);
                 } else if (postagem instanceof Artigo && tipo.equals("artigo")) {
                     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("post-preview.fxml"));
                     Pane pane = fxmlLoader.load();
+                    pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            Parent root = null;
+                            FXMLLoader loader = null;
+                            try{
+                                loader = new FXMLLoader(Main.class.getResource("post-view.fxml"));
+                                root = loader.load();
+                                PostController postCont = loader.getController();
+                                postCont.setData(us,myUser,postagem);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            bp.setCenter(root);
+                        }
+                    });
                     PostagemPreviewController postagemController = fxmlLoader.getController();
                     postagemController.setDataPostPreview(postagem.getTitulo(),postagem.getSubTitulo(),postagem.getDataPostagem().format(formatter),((Artigo) postagem).getProprietario().getName());
                     list.add(pane);

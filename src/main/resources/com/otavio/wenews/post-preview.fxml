@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="222.0" prefWidth="974" styleClass="preview" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="com.otavio.wenews.controllers.PostagemPreviewController">
+<Pane prefHeight="222.0" prefWidth="974" styleClass="preview" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.posts_controller.PostagemPreviewController">
    <children>
       <Label fx:id="titulo" layoutX="14.0" layoutY="6.0" prefHeight="75.0" prefWidth="949.0" text="Ciclone no RS: sobe para oito o número de mortos; 19 pessoas estão desaparecidas, diz Defesa Civil" textFill="WHITE" wrapText="true">
          <font>

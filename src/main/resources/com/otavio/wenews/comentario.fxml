@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="224.0" prefWidth="1040.0" styleClass="preview" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.posts_controller.ComentarioController">
+   <children>
+      <Label layoutX="22.0" layoutY="57.0" text="Comentários:" textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="comentario" layoutX="69.0" layoutY="110.0" prefHeight="29.0" prefWidth="912.0" promptText="Adicione um comentário ..." styleClass="inputComentario">
+         <font>
+            <Font name="Roboto" size="15.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="29.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@user.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="enviarComentario" layoutX="857.0" layoutY="160.0" mnemonicParsing="false" styleClass="botaoComentar" text="Comentar" textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="16.0" />
+         </font></Button>
+      <Label fx:id="message" layoutX="22.0" layoutY="25.0" textFill="#2dc355">
+         <font>
+            <Font name="Roboto" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

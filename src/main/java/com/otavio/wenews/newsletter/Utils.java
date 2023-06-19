@@ -9,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.io.*;
 import java.security.MessageDigest;
@@ -116,7 +115,7 @@ public class Utils {
             ps2.setString(1,Utils.encryptPassword("123"));
             ps2.setBytes(2,Utils.converterClienteParaByte(esc));
             ps3.setString(1,Utils.encryptPassword("123"));
-            ps3.setBytes(2,Utils.converterClienteParaByte(esc));
+            ps3.setBytes(2,Utils.converterClienteParaByte(edt));
 
             ps1.execute();
             ps2.execute();

@@ -57,7 +57,7 @@ public class Sistema {
                     } else if(rs2.getString(7).equalsIgnoreCase("escritor")) {
                         Escritor esc = Utils.converterByteParaCliente(rs2.getBytes(6));
                         new FuncionarioPainel<Escritor>(esc,event);
-                    } else if(rs2.getString(7).equalsIgnoreCase("escritor")) {
+                    } else if(rs2.getString(7).equalsIgnoreCase("editor")) {
                         Editor edt = Utils.converterByteParaCliente(rs2.getBytes(6));
                         new FuncionarioPainel<Editor>(edt,event);
                     }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="609.0" prefWidth="1097.0" style="-fx-background-color: #2f2f33;" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.posts_controller.PostController">
+   <children>
+      <Pane layoutX="115.0">
+         <children>
+            <Label fx:id="titulo" prefHeight="151.0" prefWidth="866.0" text="Produtor rural faz fogueiras para aquecer gado do frio em MS; veja vídeo Produtor rural faz fogueiras para aquecer gado do frio em MS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Poppins Black" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="subtitulo" layoutY="151.0" prefHeight="86.0" prefWidth="866.0" text="Mais de 1 mil cabeças de gado morreram de frio em Mato Grosso do Sul nos últimos dias. De acordo com especialistas, as mortes dos animais estão atreladas a uma severa hipotermia e o gado pantaneiro pode sofrer ainda mais com o frio." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nome" layoutY="266.0" text="Otavio Augusto Teixeira" textFill="#c9c9c9">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="data" layoutX="729.0" layoutY="266.0" text="17 de junho de 2023" textFill="#c9c9c9">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Separator layoutY="330.0" prefWidth="1097.0" />
+      <BorderPane fx:id="bpParagrafos" layoutX="8.0" layoutY="350.0" prefHeight="245.0" prefWidth="1076.0" stylesheets="@posts.css" />
+      <Label fx:id="adicional1" layoutX="115.0" layoutY="295.0" prefHeight="20.0" prefWidth="341.0" text="Atualidades" textFill="#eba417">
+         <font>
+            <Font name="Poppins SemiBold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="adicional2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="554.0" layoutY="295.0" prefHeight="20.0" prefWidth="427.0" text="web site g1.com.br/noticias" textFill="#eba417">
+         <font>
+            <Font name="Poppins SemiBold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

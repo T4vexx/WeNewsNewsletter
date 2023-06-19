@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="224.0" prefWidth="1040.0" styleClass="preview" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.posts_controller.ComentarioViewController">
+   <children>
+      <ImageView fitHeight="29.0" fitWidth="32.0" layoutX="37.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@user.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nome" layoutX="80.0" layoutY="28.0" text="Otavio Augusto Teixeira" textFill="WHITE">
+         <font>
+            <Font name="Roboto Black" size="12.0" />
+         </font></Label>
+      <TextArea fx:id="comentario" layoutX="80.0" layoutY="52.0" prefHeight="120.0" prefWidth="916.0" styleClass="comentario" wrapText="true">
+         <font>
+            <Font name="Roboto Medium" size="15.0" />
+         </font></TextArea>
+      <Label fx:id="data" layoutX="889.0" layoutY="28.0" text="20 de abril de 2023" textFill="#c3c3c3">
+         <font>
+            <Font name="Roboto Medium" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

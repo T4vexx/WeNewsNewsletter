@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="300.0" prefWidth="1040.0" styleClass="preview" stylesheets="@posts.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.posts_controller.ParagrafoController">
+    <children>
+        <Label fx:id="paragrafo" alignment="TOP_LEFT" prefHeight="300.0" prefWidth="1040.0" text="De acordo com a Defesa Civil, duas mortes foram registradas em São Leopoldo, uma em Novo Hamburgo, uma em Maquiné, uma em Gravataí, uma em Caraá, uma em Bom Princípio e uma em São Sebastião do Caí. Seis pessoas estão desaparecidas em Caraá e duas em Maquiné. Há outros 11 desaparecidos, mas detalhes não foram divulgados." textFill="#bfbfbf" wrapText="true">
+            <font>
+                <Font name="Poppins Medium" size="18.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>
