@@ -56,7 +56,8 @@ public class RegisterController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if(!nomeCompleto.getText().equals("") && !email.getText().equals("") && !senha.getText().equals("") && !cpf.getText().equals("")) {
-                    String passwordRegex = "^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})[A-Za-z0-9!~<>,;:_=?*+#.”&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]{8,32}$";
+                    //String passwordRegex = "^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})[A-Za-z0-9!~<>,;:_=?*+#.”&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]{8,32}$";
+                    String passwordRegex = "^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$";
                     String cpfRegex = "^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$";
                     String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
                     if(email.getText().matches(emailRegex)) {
@@ -71,6 +72,7 @@ public class RegisterController implements Initializable {
                                 }catch (LoginMissException ex) {
                                     message.setTextFill(Paint.valueOf("#E53E3E"));
                                     message.setText(ex.getMessage());
+                                    message1.setText("");
                                 }
                             } else {
                                 message.setTextFill(Paint.valueOf("#E53E3E"));
@@ -81,14 +83,17 @@ public class RegisterController implements Initializable {
                         } else {
                             message.setTextFill(Paint.valueOf("#E53E3E"));
                             message.setText("CPF inválido");
+                            message1.setText("");
                         }
                     } else {
                         message.setTextFill(Paint.valueOf("#E53E3E"));
                         message.setText("Email inválido");
+                        message1.setText("");
                     }
                 } else {
                     message.setTextFill(Paint.valueOf("#E53E3E"));
                     message.setText("Todas as informações devem ser prenchidas");
+                    message1.setText("");
                 }
             }
         });

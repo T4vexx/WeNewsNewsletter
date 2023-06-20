@@ -151,7 +151,7 @@ public class PostController implements Initializable {
             list2.getStyleClass().add("list-view-transparent");
             bpParagrafos.setCenter(list2);
         } else {
-            Button botao = new Button("Deseja continuar lendo? | Click aqui e ASSINE JÁ",new ImageView(Main.class.getResource("palmas.png").toExternalForm()));
+            Button botao = new Button("Deseja continuar lendo? | Click aqui e ASSINE JA",new ImageView(Main.class.getResource("palmas.png").toExternalForm()));
             Label label = new Label();
             botao.getStyleClass().add("botaoSeInscreva");
             label.getStyleClass().add("labelSeInscreva");
