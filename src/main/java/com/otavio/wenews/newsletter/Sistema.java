@@ -11,15 +11,42 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 
+/**
+ * Sistema
+ * Representa o sistema de gerenciamento de login da newsletter
+ * Possui os métodos de login, registro e de saída da newsletter
+ * Nessa classe é important colocar o nome da database, o usuario e a senha da mesma
+ *
+ * @see com.otavio.wenews.exceptions.LoginMissException;
+ * @see com.otavio.wenews.newsletter.employe.Editor;
+ * @see com.otavio.wenews.newsletter.employe.Escritor;
+ * @see com.otavio.wenews.newsletter.employe.Jornalista;
+ * @see com.otavio.wenews.newsletter.person.Subscriber;
+ * @see com.otavio.wenews.newsletter.person.User;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class Sistema {
     private Connection con;
 
+    /**
+     * Construtor da classe Sistema
+     * Inicializa a conexão com o banco de dados
+     */
     public Sistema() {
         con = DBFun.connectToDb("wenews","postgres","1163");
     }
 
+    /**
+     * Método que realiza o processo de login do usuário ou funcionário
+     * Verifica se a conta que foi logada e de um usuário ou funcionario e direciona
+     * esse login para seu respectivo painel
+     * @param emailLogin o email utilizado para o login
+     * @param senha a senha utilizada para o login
+     * @param event o evento de ação associado ao login
+     * @throws LoginMissException exceção lançada quando o login falha
+     */
     public void login(String emailLogin, String senha, ActionEvent event) throws LoginMissException {
         String nome,email,cpf,password;
         boolean isUserSubscriber;
@@ -70,6 +97,15 @@ public class Sistema {
 
     }
 
+    /**
+     * Método que cuida do processo de registro de um novo usuário.
+     * Possui validações de senha, email e CPF
+     * @param nome o nome do novo usuário
+     * @param email o email do novo usuário
+     * @param cpf o CPF do novo usuário
+     * @param senha a senha do novo usuário
+     * @throws LoginMissException exceção lançada quando o registro falha
+     */
     public void register(String nome, String email, String cpf, String senha) throws LoginMissException {
         PreparedStatement ps,ps2;
         ResultSet rs;
@@ -94,10 +130,18 @@ public class Sistema {
         }
     };
 
+    /**
+     * Método que realiza o logout do usuário atual e volta para o login
+     * @param e o evento de ação associado ao logout
+     */
     public void sair(ActionEvent e) {
         Utils.changeScene(e,"login","WeNews | Log-in page",400,600);
     }
 
+    /**
+     * Método que retorna a conexão com o banco de dados
+     * @return a conexão com o banco de dados
+     */
     public Connection getCon() {
         return con;
     }

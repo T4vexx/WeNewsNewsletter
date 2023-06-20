@@ -31,6 +31,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * UserController
+ * Classe controladora responsável por gerenciar as interações e funcionalidades do usuário no painel de usuário.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.Main;
+ * @see com.otavio.wenews.controllers.posts_controller.PostController;
+ * @see com.otavio.wenews.controllers.posts_controller.PostagemPreviewController;
+ * @see com.otavio.wenews.newsletter.Sistema;
+ * @see com.otavio.wenews.newsletter.UserPainel;
+ * @see com.otavio.wenews.newsletter.Utils;
+ * @see com.otavio.wenews.newsletter.person.User;
+ * @see com.otavio.wenews.newsletter.posts.Artigo;
+ * @see com.otavio.wenews.newsletter.posts.Noticia;
+ * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class UserController implements Initializable {
     private UserPainel us;
     private List<Postagem> posts = new ArrayList<>();
@@ -48,6 +66,11 @@ public class UserController implements Initializable {
     private BorderPane bp;
 
 
+    /**
+     * Método que é chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -97,6 +120,11 @@ public class UserController implements Initializable {
         });
     }
 
+    /**
+     * Método que define o usuário atual e o painel do usuário
+     * @param myUser o usuário atual
+     * @param us o painel do usuário
+     */
     public void setUser(User myUser,UserPainel us) {
         this.myUser = myUser;
         this.us = us;
@@ -105,6 +133,12 @@ public class UserController implements Initializable {
         noticias.fire();
     }
 
+
+    /**
+     * Carrega a lista de postagens do usuário no painel
+     * Uma lista para artigos e outra para notícias
+     * @param tipo o tipo de postagem a ser exibido (artigo ou notícia)
+     */
     public void loadList(String tipo) {
         list = FXCollections.observableArrayList();
         ListView list2 = new ListView<String>();

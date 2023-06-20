@@ -15,10 +15,22 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Paint;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * UserInfosController
+ * Classe controladora responsável por exibir e manipular as informações do usuário no painel de usuário.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.Main;
+ * @see com.otavio.wenews.exceptions.LoginMissException;
+ * @see com.otavio.wenews.newsletter.UserPainel;
+ * @see com.otavio.wenews.newsletter.person.User;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class UserInfosController implements Initializable {
 
     private UserPainel us;
@@ -40,6 +52,12 @@ public class UserInfosController implements Initializable {
     @FXML
     private BorderPane bp;
 
+
+    /**
+     * Método que é chamado ao inicializar o controlador de usuario
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -69,6 +87,11 @@ public class UserInfosController implements Initializable {
 
     }
 
+    /**
+     * Método que define os dados do painel de usuário e do usuário atual
+     * @param us o painel de usuário
+     * @param myUser o usuário atual
+     */
     public void setData(UserPainel us, User myUser) {
         this.us = us;
         this.myUser = myUser;
@@ -94,6 +117,11 @@ public class UserInfosController implements Initializable {
         }
     }
 
+
+    /**
+     * Método que bloqueia a edição de um campo de texto
+     * @param tx o campo de texto a ser bloqueado
+     */
     public void blockTextFied(TextField tx) {
         tx.setEditable(false);
         tx.setMouseTransparent(true);

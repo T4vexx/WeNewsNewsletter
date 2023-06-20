@@ -38,8 +38,8 @@ public class UserPainel {
     /**
      * Construtor que inicia o usuário e cria a cena da Home de usuário
      * Envia os dados para o controllador
-     * @param myUser
-     * @param event
+     * @param myUser myUser informações do usuário
+     * @param event event evento de ação
      */
     public UserPainel(User myUser, ActionEvent event) {
         this.myUser = myUser;
@@ -76,6 +76,10 @@ public class UserPainel {
         }
     }
 
+    /**
+     * Método que associa uma nova inscrição a um usuário
+     * @param user o usuário que se tornou um inscrito
+     */
     public void giveUserSubscription(User user) {
         PreparedStatement ps;
         Sistema sis = Utils.getSistema();
@@ -93,6 +97,13 @@ public class UserPainel {
         }
     }
 
+    /**
+     * Método que adiciona um novo comentário a um post
+     * @param myUser o usuário que comentou
+     * @param post o post que foi comentado
+     * @param comentario o comentário
+     * @param event o evento de ação
+     */
     public void addNewComentToAPost(User myUser, Postagem post, String comentario, ActionEvent event) {
         PreparedStatement ps,ps2;
         ResultSet rs;
@@ -131,6 +142,12 @@ public class UserPainel {
         }
     }
 
+    /**
+     * Método que troca a senha de um usuário
+     * @param oldPassword senha antiga
+     * @param newPassword nova senha
+     * @throws LoginMissException exceção lançada quando a senha antiga está incorreta
+     */
     public void changePassword(String oldPassword, String newPassword) throws LoginMissException {
         if(myUser.validarSenha(oldPassword)) {
             PreparedStatement ps;
@@ -148,6 +165,11 @@ public class UserPainel {
         }
     }
 
+    /**
+     * Método que renova a assinatura expirada de um usuário
+     * @param sub A inscrição de um usuário
+     * @param event evento de ação
+     */
     public void renewSubscription(Subscriber sub,ActionEvent event) {
         PreparedStatement ps;
         Sistema sis = Utils.getSistema();

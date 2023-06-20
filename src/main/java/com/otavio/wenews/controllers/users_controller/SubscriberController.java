@@ -10,12 +10,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * SubscriberController
+ * Classe controladora responsável por gerenciar as interações e funcionalidades do assinante no painel de assinante.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.newsletter.UserPainel;
+ * @see com.otavio.wenews.newsletter.person.Subscriber;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class SubscriberController implements Initializable {
 
     private UserPainel us;
@@ -29,6 +38,12 @@ public class SubscriberController implements Initializable {
     @FXML
     private Label message;
 
+
+    /**
+     * Método que é chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -42,6 +57,12 @@ public class SubscriberController implements Initializable {
         });
     }
 
+    /**
+     * Define os dados do painel de assinante.
+     * Faz o bloqueio do botao caso o usuario nao esteja expirado com sua inscricão
+     * @param us o painel de usuário
+     * @param sub o assinante
+     */
     public void setData(UserPainel us, Subscriber sub) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'de' yyyy  HH:mm", new Locale("pt", "BR"));
         primeira.setText(sub.getFirstSubscription().format(formatter));
@@ -57,6 +78,10 @@ public class SubscriberController implements Initializable {
         }
     }
 
+    /**
+     * Bloqueia o campo de texto para edição
+     * @param tx o campo de texto a ser bloqueado
+     */
     public void blockTextFied(TextField tx) {
         tx.setEditable(false);
         tx.setMouseTransparent(true);

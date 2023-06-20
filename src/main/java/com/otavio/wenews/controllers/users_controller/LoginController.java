@@ -15,6 +15,14 @@ import javafx.scene.paint.Paint;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * LoginController
+ * Classe controladora responsável pelo login de usuários.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class LoginController implements Initializable {
 
     @FXML
@@ -28,6 +36,11 @@ public class LoginController implements Initializable {
     @FXML
     private Label message;
 
+    /**
+     * Método que é chamado ao inicializar o controlador
+     * @param location o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Sistema sis = Utils.getSistema();

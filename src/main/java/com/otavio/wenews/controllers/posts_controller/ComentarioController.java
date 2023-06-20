@@ -11,10 +11,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * ComentarioController
+ * Classe controladora responsável por exibir um criador de comentário de um post.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.newsletter.UserPainel;
+ * @see com.otavio.wenews.newsletter.person.User;
+ * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class ComentarioController implements Initializable {
 
     private User myUser;
@@ -27,6 +38,11 @@ public class ComentarioController implements Initializable {
     @FXML
     private Label message;
 
+    /**
+     * Método chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -45,6 +61,12 @@ public class ComentarioController implements Initializable {
         });
     }
 
+    /**
+     * Define os dados de um comentário
+     * @param us o painel de usuários
+     * @param myUser o usuário atual
+     * @param post o post ao qual o comentário está sendo feito
+     */
     public void setData(UserPainel us, User myUser, Postagem post) {
         this.us = us;
         this.myUser = myUser;

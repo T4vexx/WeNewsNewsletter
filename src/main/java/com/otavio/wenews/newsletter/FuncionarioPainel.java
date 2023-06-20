@@ -13,16 +13,40 @@ import com.otavio.wenews.newsletter.posts.Noticia;
 import com.otavio.wenews.newsletter.posts.Postagem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * FuncionarioPainel
+ * A classe FuncionarioPainel representa o painel do funcionário, onde são realizadas
+ * operações relacionadas aos posts da newsletter. Ela é parametrizada pelo tipo T, que
+ * deve ser uma subclasse de Funcionario.
+ *
+ * @see com.otavio.wenews.controllers.employes_controller.EditorController;
+ * @see com.otavio.wenews.controllers.employes_controller.EscritorJornalistaController;
+ * @see com.otavio.wenews.exceptions.NonexistentPostError;
+ * @see com.otavio.wenews.exceptions.WriteNewPostError;
+ * @see com.otavio.wenews.newsletter.employe.Editor;
+ * @see com.otavio.wenews.newsletter.employe.Escritor;
+ * @see com.otavio.wenews.newsletter.employe.Funcionario;
+ * @see com.otavio.wenews.newsletter.employe.Jornalista;
+ * @see com.otavio.wenews.newsletter.posts.Artigo;
+ * @see com.otavio.wenews.newsletter.posts.Noticia;
+ * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @param <T> o tipo do funcionário
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class FuncionarioPainel<T extends Funcionario> {
     private T myFun;
 
+    /**
+     * Construtor da classe FuncionarioPainel
+     * @param MyFun  o funcionário
+     * @param event  o evento de ação
+     */
     public FuncionarioPainel(T MyFun, ActionEvent event) {
         this.myFun = MyFun;
         if(MyFun instanceof Jornalista || MyFun instanceof Escritor) {
@@ -36,6 +60,12 @@ public class FuncionarioPainel<T extends Funcionario> {
         }
     }
 
+    /**
+     * Método que realiza a publicação de um post no banco de dados
+     * @param post o post a ser publicado
+     * @return true se a publicação for bem-sucedida, false caso contrário
+     * @throws WriteNewPostError exceção lançada quando ocorre um erro na publicação do post
+     */
     public boolean post(Postagem post) throws WriteNewPostError {
         PreparedStatement ps;
         ResultSet rs;
@@ -66,6 +96,10 @@ public class FuncionarioPainel<T extends Funcionario> {
         }
     }
 
+    /**
+     * Método que carrega todos os posts da newsletter e retorna como um array
+     * @return uma lista de postagens da newsletter
+     */
     public ArrayList<Postagem> loadAllPosts() {
         PreparedStatement ps;
         ResultSet rs;
@@ -90,6 +124,11 @@ public class FuncionarioPainel<T extends Funcionario> {
         }
     }
 
+    /**
+     * Método que exclui um post da newsletter no banco de dados
+     * @param post o post a ser excluído
+     * @throws NonexistentPostError exceção lançada quando o post não existe
+     */
     public void excludePost(Postagem post) throws NonexistentPostError {
         PreparedStatement ps;
         ResultSet rs;
@@ -109,6 +148,12 @@ public class FuncionarioPainel<T extends Funcionario> {
         }
     }
 
+    /**
+     * Método chamado por um editor para modificar uma postagem da newsletter
+     * @param newPost o novo post
+     * @param oldPost o post antigo
+     * @throws NonexistentPostError exceção lançada quando o post antigo não existe
+     */
     public void editePost(Postagem newPost, Postagem oldPost) throws NonexistentPostError {
         PreparedStatement ps;
         ResultSet rs;

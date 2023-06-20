@@ -11,7 +11,8 @@ paragrafo so com 625 caracteres
 -✅- Adicionar o post no escritor e no jornalista
 -✅- Acabar Editor
 -✅- Verificaçoes de entrada (Regex de senha, cpf, email, tamanho dos titulos, subtitulos e outras informações)
-- X - Javadoc 
+-✅- Javadoc 
+- X - Implementar um interface qualquer Sla
 - X - Fazer arquivo que explica como usar o projeto
 - X - Fazer a apresentação
 

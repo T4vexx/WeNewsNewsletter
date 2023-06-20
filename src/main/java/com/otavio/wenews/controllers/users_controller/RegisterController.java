@@ -11,12 +11,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+/**
+ * RegisterController
+ * Classe controladora responsável por gerenciar o registro de novos usuários.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.exceptions.LoginMissException;
+ * @see com.otavio.wenews.newsletter.Sistema;
+ * @see com.otavio.wenews.newsletter.Utils;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class RegisterController implements Initializable {
 
     @FXML
@@ -36,6 +44,11 @@ public class RegisterController implements Initializable {
     @FXML
     private Label message1;
 
+    /**
+     * Método que é chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Sistema sis = Utils.getSistema();

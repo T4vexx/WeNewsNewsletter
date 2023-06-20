@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Esta classe é a classe principal da aplicação WeNews, que permite aos usuários se cadastrarem e receberem notícias.
  * <p>
- * A classe Main herda da classe Application do JavaFX e é responsável por carregar a cena inicial da interface gráfica, que é a tela de login.
+ * A classe Main herda da classe Application do JavaFX e é responsável por carregar a cena inicial da interface gráfica, sendo a tela de login.
  *
  * @see com.otavio.wenews.newsletter.DBFun
  * @see com.otavio.wenews.newsletter.Sistema

@@ -1,9 +1,6 @@
 package com.otavio.wenews.controllers.posts_controller;
 
 import com.otavio.wenews.Main;
-import com.otavio.wenews.controllers.posts_controller.ComentarioController;
-import com.otavio.wenews.controllers.posts_controller.ComentarioViewController;
-import com.otavio.wenews.controllers.posts_controller.ParagrafoController;
 import com.otavio.wenews.controllers.users_controller.UserController;
 import com.otavio.wenews.newsletter.UserPainel;
 import com.otavio.wenews.newsletter.Utils;
@@ -27,7 +24,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
@@ -36,6 +32,23 @@ import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * PostController
+ * Classe controladora responsável por exibir um post.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.Main;
+ * @see com.otavio.wenews.controllers.users_controller.UserController;
+ * @see com.otavio.wenews.newsletter.UserPainel;
+ * @see com.otavio.wenews.newsletter.Utils;
+ * @see com.otavio.wenews.newsletter.person.User;
+ * @see com.otavio.wenews.newsletter.posts.Artigo;
+ * @see com.otavio.wenews.newsletter.posts.Comentario;
+ * @see com.otavio.wenews.newsletter.posts.Noticia;
+ * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class PostController implements Initializable {
 
     private UserPainel us;
@@ -56,11 +69,23 @@ public class PostController implements Initializable {
     @FXML
     private BorderPane bpParagrafos;
 
+    /**
+     * Método chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
+    /**
+     * Método que define os dados do post a ser exibido
+     * Também faz a exibição dos parágrafos e dos comentários
+     * @param us o painel de usuários
+     * @param myUser o usuário atual
+     * @param post o post a ser exibido
+     */
     public void setData(UserPainel us, User myUser, Postagem post) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'de' yyyy", new Locale("pt", "BR"));
         this.us = us;
