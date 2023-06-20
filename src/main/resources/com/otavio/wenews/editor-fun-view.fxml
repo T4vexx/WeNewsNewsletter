@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="609.0" prefWidth="974.0" style="-fx-background-color: #2f2f33;" stylesheets="@funcionarios.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.employes_controller.EditorEditarController">
+<AnchorPane prefHeight="609.0" prefWidth="974.0" style="-fx-background-color: #2f2f33;" stylesheets="@funcionarios.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.otavio.wenews.controllers.employes_controller.EditorEditarController">
     <children>
         <Pane layoutX="14.0" layoutY="14.0" prefHeight="579.0" prefWidth="942.0" style="-fx-background-color: #252528; -fx-background-radius: 10px;">
             <children>

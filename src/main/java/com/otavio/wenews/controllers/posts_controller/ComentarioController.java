@@ -20,9 +20,9 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por exibir um criador de comentário de um post.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.newsletter.UserPainel;
- * @see com.otavio.wenews.newsletter.person.User;
- * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @see com.otavio.wenews.newsletter.UserPainel
+ * @see com.otavio.wenews.newsletter.person.User
+ * @see com.otavio.wenews.newsletter.posts.Postagem
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

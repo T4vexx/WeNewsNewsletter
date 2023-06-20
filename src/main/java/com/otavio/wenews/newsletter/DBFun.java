@@ -26,10 +26,14 @@ public class DBFun {
             if(con != null) {
                 System.out.println("Conexao realizada com sucesso");
             } else {
-                System.out.println("Erro ao tentar conexao");
+                System.out.println("Erro ao tentar conexão");
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println("Erro ao tentar conexão com a DB | Possíveis erros:");
+            System.out.println("Nome do banco de dados principal errado no arquivo Sistema.java");
+            System.out.println("Nome do usuário do banco de dados errado no arquivo Sistema.java");
+            System.out.println("Senha do banco de dados errado no arquivo Sistema.java");
+            System.out.println("Falta da instalação de driver JDBC que está na pasta driver na raiz");
         }
         return con;
     }

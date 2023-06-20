@@ -2,7 +2,7 @@ package com.otavio.wenews.exceptions;
 
 /**
  * LoginMissException
- * Classe que cria um erro ao logar ou registrar um usuario
+ * Classe que cria um erro ao entrar ou registrar um usuário
  *
  * @author Otávio Augusto Teixeira
  * @version 1.0

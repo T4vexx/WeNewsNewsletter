@@ -145,6 +145,8 @@
 .comentario {
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
+    -fx-border-color: #ECC94B;
+    -fx-border-width: 2px;
     -fx-background-color: #e6e6e6;
     -fx-text-fill: black;
 }

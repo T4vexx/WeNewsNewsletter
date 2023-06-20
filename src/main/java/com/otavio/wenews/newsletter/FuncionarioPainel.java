@@ -24,17 +24,17 @@ import java.util.ArrayList;
  * operações relacionadas aos posts da newsletter. Ela é parametrizada pelo tipo T, que
  * deve ser uma subclasse de Funcionario.
  *
- * @see com.otavio.wenews.controllers.employes_controller.EditorController;
- * @see com.otavio.wenews.controllers.employes_controller.EscritorJornalistaController;
- * @see com.otavio.wenews.exceptions.NonexistentPostError;
- * @see com.otavio.wenews.exceptions.WriteNewPostError;
- * @see com.otavio.wenews.newsletter.employe.Editor;
- * @see com.otavio.wenews.newsletter.employe.Escritor;
- * @see com.otavio.wenews.newsletter.employe.Funcionario;
- * @see com.otavio.wenews.newsletter.employe.Jornalista;
- * @see com.otavio.wenews.newsletter.posts.Artigo;
- * @see com.otavio.wenews.newsletter.posts.Noticia;
- * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @see com.otavio.wenews.controllers.employes_controller.EditorController
+ * @see com.otavio.wenews.controllers.employes_controller.EscritorJornalistaController
+ * @see com.otavio.wenews.exceptions.NonexistentPostError
+ * @see com.otavio.wenews.exceptions.WriteNewPostError
+ * @see com.otavio.wenews.newsletter.employe.Editor
+ * @see com.otavio.wenews.newsletter.employe.Escritor
+ * @see com.otavio.wenews.newsletter.employe.Funcionario
+ * @see com.otavio.wenews.newsletter.employe.Jornalista
+ * @see com.otavio.wenews.newsletter.posts.Artigo
+ * @see com.otavio.wenews.newsletter.posts.Noticia
+ * @see com.otavio.wenews.newsletter.posts.Postagem
  * @param <T> o tipo do funcionário
  * @author Otávio Augusto Teixeira
  * @version 1.0

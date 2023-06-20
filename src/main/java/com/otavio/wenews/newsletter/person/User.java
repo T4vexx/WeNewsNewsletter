@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * User
  * Esta classe representa um usuário do sistema de newsletter.
- * Um usuário pode ser um assinante ou não, e tem um nome, um email, um cpf e uma senha.
+ * Um usuário pode ser um assinante ou não, com um nome, um email, um cpf e uma senha.
  * Um usuário assinante também tem uma inscrição associada a ele, que contém as informações sobre o plano e o pagamento.
  *
  * @see com.otavio.wenews.newsletter.Utils

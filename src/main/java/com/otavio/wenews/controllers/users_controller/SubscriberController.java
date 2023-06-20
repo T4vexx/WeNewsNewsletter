@@ -20,8 +20,8 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por gerenciar as interações e funcionalidades do assinante no painel de assinante.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.newsletter.UserPainel;
- * @see com.otavio.wenews.newsletter.person.Subscriber;
+ * @see com.otavio.wenews.newsletter.UserPainel
+ * @see com.otavio.wenews.newsletter.person.Subscriber
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

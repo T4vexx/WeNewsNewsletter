@@ -21,8 +21,8 @@ import java.sql.ResultSet;
 /**
  * Utils
  * Essa classe guarda diversos métodos utils para ser usado no código
- * Possui um atributo statico Sistema syst que guarda um sistema para poder ser chamado nos controllers
- * Possui métodos que, converte os cliente para bytes, encryptar a senha e gerar super usuarios
+ * Possui um atributo estático Sistema syst que guarda um sistema para poder ser chamado nos controllers
+ * Possui métodos que, converte o cliente para bytes, encryptar a senha e gerar super usuários
  * @see com.otavio.wenews.newsletter.employe.Editor
  * @see com.otavio.wenews.newsletter.employe.Escritor
  * @see com.otavio.wenews.newsletter.employe.Jornalista
@@ -44,11 +44,11 @@ public class Utils {
     /**
      * Método para mudar de uma cena para uma nova cena e retornar o loader para pegar o controlador
      * @param event evento dando quer mudar a cena
-     * @param fxmlFile Nome do arquivo .fxml da nova cena
+     * @param fxmlFile Nome do arquivo.fxml da nova cena
      * @param title titulo da nova cena
      * @param x tamanho de largura da página
      * @param y tamanho de altura da página
-     * @return return um FXMLLoader para poder usar um controller mais pra frente
+     * @return return um FXMLLoader para poder usar um controller mais para frente
      */
     public static FXMLLoader changeScene(ActionEvent event, String fxmlFile, String title,int x, int y) {
         Parent root = null;
@@ -143,7 +143,7 @@ public class Utils {
     }
 
     /**
-     * Método que gera os 3 superusuarios, um jornalista que pode escrever uma noticia, um Escritor que pode escrever um artigo e um editor que pode editar um artigo e uma noticia
+     * Método que gera os 3 superusuários, um jornalista que pode escrever uma notícia, um Escritor que pode escrever um artigo e um editor que pode editar um artigo e uma notícia
      */
     public static void genereteSuperUsuarios() {
         PreparedStatement ps1,ps2,ps3,ps4;

@@ -37,15 +37,15 @@ import java.util.concurrent.TimeUnit;
  * Classe controladora responsável por exibir um post.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main;
- * @see com.otavio.wenews.controllers.users_controller.UserController;
- * @see com.otavio.wenews.newsletter.UserPainel;
- * @see com.otavio.wenews.newsletter.Utils;
- * @see com.otavio.wenews.newsletter.person.User;
- * @see com.otavio.wenews.newsletter.posts.Artigo;
- * @see com.otavio.wenews.newsletter.posts.Comentario;
+ * @see com.otavio.wenews.Main
+ * @see com.otavio.wenews.controllers.users_controller.UserController
+ * @see com.otavio.wenews.newsletter.UserPainel
+ * @see com.otavio.wenews.newsletter.Utils
+ * @see com.otavio.wenews.newsletter.person.User
+ * @see com.otavio.wenews.newsletter.posts.Artigo
+ * @see com.otavio.wenews.newsletter.posts.Comentario
  * @see com.otavio.wenews.newsletter.posts.Noticia;
- * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @see com.otavio.wenews.newsletter.posts.Postagem
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

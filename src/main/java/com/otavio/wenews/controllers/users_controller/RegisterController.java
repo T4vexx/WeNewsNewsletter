@@ -19,9 +19,9 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por gerenciar o registro de novos usuários.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.exceptions.LoginMissException;
- * @see com.otavio.wenews.newsletter.Sistema;
- * @see com.otavio.wenews.newsletter.Utils;
+ * @see com.otavio.wenews.exceptions.LoginMissException
+ * @see com.otavio.wenews.newsletter.Sistema
+ * @see com.otavio.wenews.newsletter.Utils
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

@@ -17,13 +17,28 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
 import javax.swing.*;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
+/**
+ * EditorEditarController
+ * Classe controladora responsável por exibir um editor de artigos/notícias para um editor.
+ * Editor consegue editar e deletar qualquer postagem da newsletter.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.exceptions.NonexistentPostError
+ * @see com.otavio.wenews.newsletter.FuncionarioPainel
+ * @see com.otavio.wenews.newsletter.Utils
+ * @see com.otavio.wenews.newsletter.employe.Editor
+ * @see com.otavio.wenews.newsletter.posts.Artigo
+ * @see com.otavio.wenews.newsletter.posts.Noticia
+ * @see com.otavio.wenews.newsletter.posts.Postagem
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class EditorEditarController implements Initializable {
 
     private Postagem post;
@@ -52,6 +67,11 @@ public class EditorEditarController implements Initializable {
     @FXML
     private Label message;
 
+    /**
+     * Método chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -119,6 +139,12 @@ public class EditorEditarController implements Initializable {
 
     }
 
+    /**
+     * Método que carrega os dados de uma postagem, do editor que trabalhara nela e de um painel de funcionário
+     * @param post uma postagem para ser editada
+     * @param myFun o funcionário que editara uma postagem
+     * @param fp o painel de funcionário
+     */
     public void setData(Postagem post, Editor myFun, FuncionarioPainel fp) {
         int count=0;
         this.post = post;
@@ -150,6 +176,11 @@ public class EditorEditarController implements Initializable {
         }
     }
 
+    /**
+     * Método que checa se um campo de texto está vazio
+     * @param tx o TextField que sera verificado
+     * @return se tiver vazio retorna true se tiver com texto retorna false
+     */
     public boolean checkEmpyt(TextField tx) {
         return tx.getText().equals("");
     }

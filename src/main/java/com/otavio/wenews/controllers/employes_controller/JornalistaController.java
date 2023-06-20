@@ -14,13 +14,24 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.concurrent.*;
 
+/**
+ * JornalistaController
+ * Classe controladora responsável por exibir um criador de noticias para um jornalista.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.exceptions.WriteNewPostError
+ * @see com.otavio.wenews.newsletter.FuncionarioPainel
+ * @see com.otavio.wenews.newsletter.employe.Jornalista
+ * @see com.otavio.wenews.newsletter.posts.Noticia
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class JornalistaController implements Initializable {
 
     private FuncionarioPainel funPainel;
@@ -40,6 +51,11 @@ public class JornalistaController implements Initializable {
     @FXML
     private Label message;
 
+    /**
+     * Método chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Noticia noticia = new Noticia();
@@ -92,14 +108,28 @@ public class JornalistaController implements Initializable {
         });
     }
 
+    /**
+     * Método que checa se um campo de texto está vazios
+     * @param check o TextField que sera verificado
+     * @return se tiver vazio retorna false se tiver com texto retorna true
+     */
     private boolean checkEmpyt(TextField check) {
         return !check.getText().equals("");
     }
 
+    /**
+     * Método que seta um campo de texto como vazio
+     * @param check o TextField que sera setado como vazio
+     */
     private void setEmpyt(TextField check) {
         check.setText("");
     }
 
+    /**
+     * Método que carrega um funcionário e um painel de funcionário
+     * @param myJor um funcionário do tipo Jornalista
+     * @param funPainel um painel de funcionário
+     */
     public void setMyFun(Jornalista myJor, FuncionarioPainel funPainel) {
         this.myJor = myJor;
         this.funPainel = funPainel;

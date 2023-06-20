@@ -19,16 +19,16 @@ import java.util.ArrayList;
 /**
  * UserPainel
  * Esta classe são os métodos que cuidam de todas as funções de um usuário
- * Possui um atributo myUser que armazena as informações de uma usuário
- * Quando a classe é instaciada ela cria a página Home de usúario
- * @see com.otavio.wenews.controllers.users_controller.UserController;
- * @see com.otavio.wenews.exceptions.LoginMissException;
- * @see com.otavio.wenews.newsletter.person.Subscriber;
- * @see com.otavio.wenews.newsletter.person.User;
- * @see com.otavio.wenews.newsletter.posts.Artigo;
- * @see com.otavio.wenews.newsletter.posts.Comentario;
- * @see com.otavio.wenews.newsletter.posts.Noticia;
- * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * Possui um atributo myUser que armazena as informações de um usuário
+ * Quando a classe é instanciada ela cria a página Home de usuário
+ * @see com.otavio.wenews.controllers.users_controller.UserController
+ * @see com.otavio.wenews.exceptions.LoginMissException
+ * @see com.otavio.wenews.newsletter.person.Subscriber
+ * @see com.otavio.wenews.newsletter.person.User
+ * @see com.otavio.wenews.newsletter.posts.Artigo
+ * @see com.otavio.wenews.newsletter.posts.Comentario
+ * @see com.otavio.wenews.newsletter.posts.Noticia
+ * @see com.otavio.wenews.newsletter.posts.Postagem
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

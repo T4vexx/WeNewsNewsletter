@@ -1,5 +1,6 @@
 package com.otavio.wenews.newsletter.posts;
 
+import com.otavio.wenews.interfaces.Postaveis;
 import com.otavio.wenews.newsletter.employe.Escritor;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -7,14 +8,14 @@ import java.time.LocalDateTime;
 /**
  * Artigo
  * Classe que representa um Artigo, um tipo de Postagem.
- * Extende postagem e implementa serializable, para poder ser armazenada em um banco de dados
+ * Estende postagem e implementa serializable, para poder ser armazenada em um banco de dados
  * Possui campos mais especializados relacionados a um artigo
  *
  * @see com.otavio.wenews.newsletter.employe.Escritor
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */
-public class Artigo extends Postagem implements Serializable {
+public class Artigo extends Postagem implements Serializable, Postaveis {
     private String tema;
     private String protagonistas;
     private Escritor proprietario;
@@ -86,5 +87,10 @@ public class Artigo extends Postagem implements Serializable {
      */
     public void setProprietario(Escritor proprietario) {
         this.proprietario = proprietario;
+    }
+
+    @Override
+    public String getTitulo() {
+        return super.getTitulo();
     }
 }

@@ -16,14 +16,14 @@ import java.sql.SQLException;
  * Sistema
  * Representa o sistema de gerenciamento de login da newsletter
  * Possui os métodos de login, registro e de saída da newsletter
- * Nessa classe é important colocar o nome da database, o usuario e a senha da mesma
+ * Nessa classe é important colocar o nome da database, o usuário e a senha da mesma
  *
- * @see com.otavio.wenews.exceptions.LoginMissException;
- * @see com.otavio.wenews.newsletter.employe.Editor;
- * @see com.otavio.wenews.newsletter.employe.Escritor;
- * @see com.otavio.wenews.newsletter.employe.Jornalista;
- * @see com.otavio.wenews.newsletter.person.Subscriber;
- * @see com.otavio.wenews.newsletter.person.User;
+ * @see com.otavio.wenews.exceptions.LoginMissException
+ * @see com.otavio.wenews.newsletter.employe.Editor
+ * @see com.otavio.wenews.newsletter.employe.Escritor
+ * @see com.otavio.wenews.newsletter.employe.Jornalista
+ * @see com.otavio.wenews.newsletter.person.Subscriber
+ * @see com.otavio.wenews.newsletter.person.User
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */
@@ -34,9 +34,7 @@ public class Sistema {
      * Construtor da classe Sistema
      * Inicializa a conexão com o banco de dados
      */
-    public Sistema() {
-        con = DBFun.connectToDb("wenews","postgres","1163");
-    }
+    public Sistema() { con = DBFun.connectToDb("wenews","postgres","123456"); }
 
     /**
      * Método que realiza o processo de login do usuário ou funcionário

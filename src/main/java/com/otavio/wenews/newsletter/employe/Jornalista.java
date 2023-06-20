@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * Jornalista
- * Classe que representa um jornalista como um tipo de funcionário.
+ * Classe que representa um jornalista como um tipo de funcionário
  * Especializado em escrever apenas notícias
  *
  * @see com.otavio.wenews.newsletter.posts.Noticia

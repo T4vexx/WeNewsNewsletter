@@ -36,16 +36,16 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por gerenciar as interações e funcionalidades do usuário no painel de usuário.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main;
- * @see com.otavio.wenews.controllers.posts_controller.PostController;
- * @see com.otavio.wenews.controllers.posts_controller.PostagemPreviewController;
- * @see com.otavio.wenews.newsletter.Sistema;
- * @see com.otavio.wenews.newsletter.UserPainel;
- * @see com.otavio.wenews.newsletter.Utils;
- * @see com.otavio.wenews.newsletter.person.User;
- * @see com.otavio.wenews.newsletter.posts.Artigo;
- * @see com.otavio.wenews.newsletter.posts.Noticia;
- * @see com.otavio.wenews.newsletter.posts.Postagem;
+ * @see com.otavio.wenews.Main
+ * @see com.otavio.wenews.controllers.posts_controller.PostController
+ * @see com.otavio.wenews.controllers.posts_controller.PostagemPreviewController
+ * @see com.otavio.wenews.newsletter.Sistema
+ * @see com.otavio.wenews.newsletter.UserPainel
+ * @see com.otavio.wenews.newsletter.Utils
+ * @see com.otavio.wenews.newsletter.person.User
+ * @see com.otavio.wenews.newsletter.posts.Artigo
+ * @see com.otavio.wenews.newsletter.posts.Noticia
+ * @see com.otavio.wenews.newsletter.posts.Postagem
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

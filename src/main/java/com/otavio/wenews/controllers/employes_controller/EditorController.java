@@ -1,7 +1,6 @@
 package com.otavio.wenews.controllers.employes_controller;
 
 import com.otavio.wenews.Main;
-import com.otavio.wenews.controllers.posts_controller.PostController;
 import com.otavio.wenews.controllers.posts_controller.PostagemPreviewController;
 import com.otavio.wenews.newsletter.FuncionarioPainel;
 import com.otavio.wenews.newsletter.Sistema;
@@ -25,7 +24,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
@@ -33,6 +31,25 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * EditorController
+ * Classe controladora responsável por exibir todas as postagens da newsletter para um editor poder selecionar qual editar.
+ * Editor consegue editar e deletar qualquer postagem da newsletter.
+ * Essa classe implementa a interface Initializable do JavaFX.
+ *
+ * @see com.otavio.wenews.Main
+ * @see com.otavio.wenews.controllers.posts_controller.PostagemPreviewController
+ * @see com.otavio.wenews.newsletter.FuncionarioPainel
+ * @see com.otavio.wenews.newsletter.Sistema
+ * @see com.otavio.wenews.newsletter.Utils
+ * @see com.otavio.wenews.newsletter.employe.Editor
+ * @see com.otavio.wenews.newsletter.employe.Funcionario
+ * @see com.otavio.wenews.newsletter.posts.Artigo
+ * @see com.otavio.wenews.newsletter.posts.Noticia
+ * @see com.otavio.wenews.newsletter.posts.Postagem
+ * @author Otávio Augusto Teixeira
+ * @version 1.0
+ */
 public class EditorController implements Initializable {
 
     private FuncionarioPainel fc;
@@ -47,6 +64,11 @@ public class EditorController implements Initializable {
     @FXML
     private Button voltar;
 
+    /**
+     * Método chamado ao inicializar o controlador
+     * @param location  o local do arquivo FXML
+     * @param resources os recursos utilizados pela classe
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -70,6 +92,11 @@ public class EditorController implements Initializable {
             });
     }
 
+    /**
+     * Método que carrega os dados de um funcionário do tipo editor
+     * @param fc  o painel de funcionário
+     * @param myFun o editor
+     */
     public void setData(FuncionarioPainel fc, Funcionario myFun) {
         this.fc = fc;
         this.myFun = myFun;
@@ -78,6 +105,11 @@ public class EditorController implements Initializable {
         loadList();
     }
 
+    /**
+     * Método que constrói todos os previews das postagens que um editor pode alterar
+     * Ao clicar na postagem o editor e redirecionado para o painel de edição contido em:
+     * @see com.otavio.wenews.controllers.employes_controller.EditorEditarController;
+     */
     public void loadList() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'de' yyyy", new Locale("pt", "BR"));
         ObservableList<Pane> list = FXCollections.observableArrayList();

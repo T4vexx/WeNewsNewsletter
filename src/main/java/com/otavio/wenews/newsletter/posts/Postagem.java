@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * Classe abstrata que representa uma postagem genérica.
  * Possui todos os atributos em comum entre um artigo e uma notícia
  *
- * @see com.otavio.wenews.newsletter.employe.Editor;
+ * @see com.otavio.wenews.newsletter.employe.Editor
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */

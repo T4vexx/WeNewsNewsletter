@@ -24,10 +24,10 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por exibir e manipular as informações do usuário no painel de usuário.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main;
- * @see com.otavio.wenews.exceptions.LoginMissException;
- * @see com.otavio.wenews.newsletter.UserPainel;
- * @see com.otavio.wenews.newsletter.person.User;
+ * @see com.otavio.wenews.Main
+ * @see com.otavio.wenews.exceptions.LoginMissException
+ * @see com.otavio.wenews.newsletter.UserPainel
+ * @see com.otavio.wenews.newsletter.person.User
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */
@@ -65,17 +65,23 @@ public class UserInfosController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if(!oldPassword.getText().equals("") && !newPassword.getText().equals("")) {
-                    if(!oldPassword.getText().equals(newPassword.getText())) {
-                        try {
-                            us.changePassword(oldPassword.getText(),newPassword.getText());
-                            message.setText("Senha alterada com sucesso");
-                            message.setTextFill(Paint.valueOf("#38A169"));
-                        } catch (LoginMissException ex) {
-                            message.setText(ex.getMessage());
+                    String passwordRegex = "^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})[A-Za-z0-9!~<>,;:_=?*+#.”&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]{8,32}$";
+                    if(newPassword.getText().matches(passwordRegex)) {
+                        if(!oldPassword.getText().equals(newPassword.getText())) {
+                            try {
+                                us.changePassword(oldPassword.getText(),newPassword.getText());
+                                message.setText("Senha alterada com sucesso");
+                                message.setTextFill(Paint.valueOf("#38A169"));
+                            } catch (LoginMissException ex) {
+                                message.setText(ex.getMessage());
+                                message.setTextFill(Paint.valueOf("#E53E3E"));
+                            }
+                        } else {
+                            message.setText("Sua senha antiga nao pode ser igual a atual!");
                             message.setTextFill(Paint.valueOf("#E53E3E"));
                         }
                     } else {
-                        message.setText("Sua senha antiga nao pode ser igual a atual!");
+                        message.setText("Sua senha nova é muito fraca");
                         message.setTextFill(Paint.valueOf("#E53E3E"));
                     }
                 } else {
