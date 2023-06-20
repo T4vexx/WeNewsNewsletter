@@ -90,7 +90,7 @@ public abstract class Postagem implements Serializable {
      * Método que obtém a lista de comentários da postagem
      * @return a lista de comentários da postagem
      */
-    public List<Comentario> getComentarios() {
+    public ArrayList<Comentario> getComentarios() {
         return comentarios;
     }
 
@@ -159,6 +159,14 @@ public abstract class Postagem implements Serializable {
      */
     public void setSubTitulo(String subTitulo) {
         this.subTitulo = subTitulo;
+    }
+
+    /**
+     * Método que define a lista de comentarios
+     * @param comentarios os comentarios de uma postagem
+     */
+    public void setComentarios(ArrayList<Comentario> comentarios) {
+        this.comentarios = comentarios;
     }
 }
 

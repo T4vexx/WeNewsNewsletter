@@ -80,23 +80,25 @@ public class EditorEditarController implements Initializable {
             public void handle(ActionEvent event) {
                 if(!checkEmpyt(titulo) && !checkEmpyt(subtitulo) && !checkEmpyt(opcional1) && !checkEmpyt(opcional2) && !paragrafo.getText().equals("")) {
                     if(post instanceof Noticia) {
-                            Noticia not = new Noticia(post.getDataPostagem(),titulo.getText(),subtitulo.getText(),opcional1.getText(),opcional2.getText(),((Noticia) post).getProprietario());
-                            not.setEditadoPor(myFun);
-                            not.setUltimaEdicao(LocalDateTime.now());
-                            Iterator<CharSequence> it = paragrafo.getParagraphs().iterator();
-                            while (it.hasNext()) {
-                                not.addNewParagraf(it.next().toString());
-                            }
-                            myFun.addPostagensEditadas(not);
-                            try {
-                                fp.editePost(not,(Noticia) post);
-                            } catch (NonexistentPostError ex) {
-                                message.setText(ex.getMessage());
-                                message.setTextFill(Paint.valueOf("#E53E3E"));
-                            }
+                        Noticia not = new Noticia(post.getDataPostagem(),titulo.getText(),subtitulo.getText(),opcional1.getText(),opcional2.getText(),((Noticia) post).getProprietario());
+                        not.setEditadoPor(myFun);
+                        not.setComentarios(post.getComentarios());
+                        not.setUltimaEdicao(LocalDateTime.now());
+                        Iterator<CharSequence> it = paragrafo.getParagraphs().iterator();
+                        while (it.hasNext()) {
+                            not.addNewParagraf(it.next().toString());
+                        }
+                        myFun.addPostagensEditadas(not);
+                        try {
+                            fp.editePost(not,(Noticia) post);
+                        } catch (NonexistentPostError ex) {
+                            message.setText(ex.getMessage());
+                            message.setTextFill(Paint.valueOf("#E53E3E"));
+                        }
                     } else {
                         Artigo art = new Artigo(post.getDataPostagem(),titulo.getText(),subtitulo.getText(),opcional1.getText(),((Artigo) post).getProprietario(),opcional2.getText());
                         art.setEditadoPor(myFun);
+                        art.setComentarios(post.getComentarios());
                         art.setUltimaEdicao(LocalDateTime.now());
                         Iterator<CharSequence> it = paragrafo.getParagraphs().iterator();
                         while (it.hasNext()) {
