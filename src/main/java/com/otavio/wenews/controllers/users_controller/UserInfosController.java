@@ -1,6 +1,6 @@
 package com.otavio.wenews.controllers.users_controller;
 
-import com.otavio.wenews.Main;
+import com.otavio.wenews.App;
 import com.otavio.wenews.exceptions.LoginMissException;
 import com.otavio.wenews.newsletter.UserPainel;
 import com.otavio.wenews.newsletter.person.User;
@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por exibir e manipular as informações do usuário no painel de usuário.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main
+ * @see App
  * @see com.otavio.wenews.exceptions.LoginMissException
  * @see com.otavio.wenews.newsletter.UserPainel
  * @see com.otavio.wenews.newsletter.person.User
@@ -65,7 +65,6 @@ public class UserInfosController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if(!oldPassword.getText().equals("") && !newPassword.getText().equals("")) {
-                    //String passwordRegex = "^(?:(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))(?!.*(.)\\1{2,})[A-Za-z0-9!~<>,;:_=?*+#.”&§%°()\\|\\[\\]\\-\\$\\^\\@\\/]{8,32}$";
                     String passwordRegex = "^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$";
                     if(newPassword.getText().matches(passwordRegex)) {
                         if(!oldPassword.getText().equals(newPassword.getText())) {
@@ -113,7 +112,7 @@ public class UserInfosController implements Initializable {
             Parent root = null;
             FXMLLoader loader = null;
             try{
-                loader = new FXMLLoader(Main.class.getResource("subscriber-info-view.fxml"));
+                loader = new FXMLLoader(App.class.getResource("subscriber-info-view.fxml"));
                 root = loader.load();
                 SubscriberController subCont = loader.getController();
                 subCont.setData(us,myUser.getInscricao());

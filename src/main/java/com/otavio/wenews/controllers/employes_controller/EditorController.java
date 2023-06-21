@@ -1,6 +1,6 @@
 package com.otavio.wenews.controllers.employes_controller;
 
-import com.otavio.wenews.Main;
+import com.otavio.wenews.App;
 import com.otavio.wenews.controllers.posts_controller.PostagemPreviewController;
 import com.otavio.wenews.newsletter.FuncionarioPainel;
 import com.otavio.wenews.newsletter.Sistema;
@@ -37,7 +37,7 @@ import java.util.ResourceBundle;
  * Editor consegue editar e deletar qualquer postagem da newsletter.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main
+ * @see App
  * @see com.otavio.wenews.controllers.posts_controller.PostagemPreviewController
  * @see com.otavio.wenews.newsletter.FuncionarioPainel
  * @see com.otavio.wenews.newsletter.Sistema
@@ -108,7 +108,6 @@ public class EditorController implements Initializable {
     /**
      * Método que constrói todos os previews das postagens que um editor pode alterar
      * Ao clicar na postagem o editor e redirecionado para o painel de edição contido em:
-     * @see com.otavio.wenews.controllers.employes_controller.EditorEditarController;
      */
     public void loadList() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'de' yyyy", new Locale("pt", "BR"));
@@ -116,7 +115,7 @@ public class EditorController implements Initializable {
         ListView list2 = new ListView<String>();
         for (Postagem postagem : posts) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("post-preview.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("post-preview.fxml"));
                 Pane pane = fxmlLoader.load();
                 PostagemPreviewController postagemController = fxmlLoader.getController();
                 pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -125,7 +124,7 @@ public class EditorController implements Initializable {
                         Parent root = null;
                         FXMLLoader loader = null;
                         try{
-                            loader = new FXMLLoader(Main.class.getResource("editor-fun-view.fxml"));
+                            loader = new FXMLLoader(App.class.getResource("editor-fun-view.fxml"));
                             root = loader.load();
                             EditorEditarController edtECont = loader.getController();
                             edtECont.setData(postagem,(Editor) myFun,fc);

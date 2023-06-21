@@ -1,6 +1,6 @@
 package com.otavio.wenews.controllers.employes_controller;
 
-import com.otavio.wenews.Main;
+import com.otavio.wenews.App;
 import com.otavio.wenews.newsletter.FuncionarioPainel;
 import com.otavio.wenews.newsletter.Sistema;
 import com.otavio.wenews.newsletter.Utils;
@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por exibir o header de um criador de notícias/artigos para um jornalista e para um escritor.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main
+ * @see App
  * @see com.otavio.wenews.newsletter.FuncionarioPainel
  * @see com.otavio.wenews.newsletter.Sistema
  * @see com.otavio.wenews.newsletter.Utils
@@ -96,7 +96,7 @@ public class EscritorJornalistaController implements Initializable {
         FXMLLoader loader = null;
 
         try{
-            loader = new FXMLLoader(Main.class.getResource(page+"-fun-view.fxml"));
+            loader = new FXMLLoader(App.class.getResource(page+"-fun-view.fxml"));
             root = loader.load();
         } catch (Exception e) {
             e.printStackTrace();

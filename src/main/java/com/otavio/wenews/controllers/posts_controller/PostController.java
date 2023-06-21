@@ -1,6 +1,6 @@
 package com.otavio.wenews.controllers.posts_controller;
 
-import com.otavio.wenews.Main;
+import com.otavio.wenews.App;
 import com.otavio.wenews.controllers.users_controller.UserController;
 import com.otavio.wenews.newsletter.UserPainel;
 import com.otavio.wenews.newsletter.Utils;
@@ -37,14 +37,14 @@ import java.util.concurrent.TimeUnit;
  * Classe controladora responsável por exibir um post.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main
+ * @see App
  * @see com.otavio.wenews.controllers.users_controller.UserController
  * @see com.otavio.wenews.newsletter.UserPainel
  * @see com.otavio.wenews.newsletter.Utils
  * @see com.otavio.wenews.newsletter.person.User
  * @see com.otavio.wenews.newsletter.posts.Artigo
  * @see com.otavio.wenews.newsletter.posts.Comentario
- * @see com.otavio.wenews.newsletter.posts.Noticia;
+ * @see com.otavio.wenews.newsletter.posts.Noticia
  * @see com.otavio.wenews.newsletter.posts.Postagem
  * @author Otávio Augusto Teixeira
  * @version 1.0
@@ -111,7 +111,7 @@ public class PostController implements Initializable {
             for (String par : post.getParagrafos()) {
                 try {
                     if(!par.isEmpty()) {
-                        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("paragrafo.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("paragrafo.fxml"));
                         Pane pane = fxmlLoader.load();
                         ParagrafoController parController = fxmlLoader.getController();
                         parController.setParagrafo(par);
@@ -123,7 +123,7 @@ public class PostController implements Initializable {
             }
 
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("comentario.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("comentario.fxml"));
                 Pane pane = fxmlLoader.load();
                 ComentarioController comController = fxmlLoader.getController();
                 comController.setData(us,myUser,post);
@@ -134,7 +134,7 @@ public class PostController implements Initializable {
 
             for(Comentario comment : post.getComentarios()) {
                 try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("comentario-view.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("comentario-view.fxml"));
                     Pane pane = fxmlLoader.load();
                     ComentarioViewController comController = fxmlLoader.getController();
                     comController.setData(comment);
@@ -151,12 +151,12 @@ public class PostController implements Initializable {
             list2.getStyleClass().add("list-view-transparent");
             bpParagrafos.setCenter(list2);
         } else {
-            Button botao = new Button("Deseja continuar lendo? | Click aqui e ASSINE JA",new ImageView(Main.class.getResource("palmas.png").toExternalForm()));
+            Button botao = new Button("Deseja continuar lendo? | Click aqui e ASSINE JA",new ImageView(App.class.getResource("palmas.png").toExternalForm()));
             Label label = new Label();
             botao.getStyleClass().add("botaoSeInscreva");
             label.getStyleClass().add("labelSeInscreva");
-            botao.getStylesheets().add(Main.class.getResource("posts.css").toExternalForm());
-            label.getStylesheets().add(Main.class.getResource("posts.css").toExternalForm());
+            botao.getStylesheets().add(App.class.getResource("posts.css").toExternalForm());
+            label.getStylesheets().add(App.class.getResource("posts.css").toExternalForm());
             bpParagrafos.setCenter(botao);
             BorderPane.setAlignment(label, Pos.CENTER);
             bpParagrafos.setBottom(label);

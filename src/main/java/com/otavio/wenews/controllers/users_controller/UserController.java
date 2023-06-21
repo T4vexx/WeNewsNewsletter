@@ -1,6 +1,6 @@
 package com.otavio.wenews.controllers.users_controller;
 
-import com.otavio.wenews.Main;
+import com.otavio.wenews.App;
 import com.otavio.wenews.controllers.posts_controller.PostController;
 import com.otavio.wenews.controllers.posts_controller.PostagemPreviewController;
 import com.otavio.wenews.newsletter.Sistema;
@@ -36,7 +36,7 @@ import java.util.ResourceBundle;
  * Classe controladora responsável por gerenciar as interações e funcionalidades do usuário no painel de usuário.
  * Essa classe implementa a interface Initializable do JavaFX.
  *
- * @see com.otavio.wenews.Main
+ * @see App
  * @see com.otavio.wenews.controllers.posts_controller.PostController
  * @see com.otavio.wenews.controllers.posts_controller.PostagemPreviewController
  * @see com.otavio.wenews.newsletter.Sistema
@@ -98,7 +98,7 @@ public class UserController implements Initializable {
                 Parent root = null;
                 FXMLLoader loader = null;
                 try{
-                    loader = new FXMLLoader(Main.class.getResource("user-info-view.fxml"));
+                    loader = new FXMLLoader(App.class.getResource("user-info-view.fxml"));
                     root = loader.load();
                     UserInfosController userInfos = loader.getController();
                     userInfos.setData(us,myUser);
@@ -147,7 +147,7 @@ public class UserController implements Initializable {
             try {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'de' yyyy", new Locale("pt", "BR"));
                 if(postagem instanceof Noticia && tipo.equals("noticia")) {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("post-preview.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("post-preview.fxml"));
                     Pane pane = fxmlLoader.load();
                     pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
@@ -155,7 +155,7 @@ public class UserController implements Initializable {
                             Parent root = null;
                             FXMLLoader loader = null;
                             try{
-                                loader = new FXMLLoader(Main.class.getResource("post-view.fxml"));
+                                loader = new FXMLLoader(App.class.getResource("post-view.fxml"));
                                 root = loader.load();
                                 PostController postCont = loader.getController();
                                 postCont.setData(us,myUser,postagem);
@@ -169,7 +169,7 @@ public class UserController implements Initializable {
                     postagemController.setDataPostPreview(postagem.getTitulo(),postagem.getSubTitulo(),postagem.getDataPostagem().format(formatter),((Noticia) postagem).getProprietario().getName());
                     list.add(pane);
                 } else if (postagem instanceof Artigo && tipo.equals("artigo")) {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("post-preview.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("post-preview.fxml"));
                     Pane pane = fxmlLoader.load();
                     pane.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override
@@ -177,7 +177,7 @@ public class UserController implements Initializable {
                             Parent root = null;
                             FXMLLoader loader = null;
                             try{
-                                loader = new FXMLLoader(Main.class.getResource("post-view.fxml"));
+                                loader = new FXMLLoader(App.class.getResource("post-view.fxml"));
                                 root = loader.load();
                                 PostController postCont = loader.getController();
                                 postCont.setData(us,myUser,postagem);

@@ -1,6 +1,6 @@
 package com.otavio.wenews.newsletter;
 
-import com.otavio.wenews.Main;
+import com.otavio.wenews.App;
 import com.otavio.wenews.newsletter.employe.Editor;
 import com.otavio.wenews.newsletter.employe.Escritor;
 import com.otavio.wenews.newsletter.employe.Jornalista;
@@ -26,7 +26,7 @@ import java.sql.ResultSet;
  * @see com.otavio.wenews.newsletter.employe.Editor
  * @see com.otavio.wenews.newsletter.employe.Escritor
  * @see com.otavio.wenews.newsletter.employe.Jornalista
- * @see com.otavio.wenews.Main
+ * @see App
  * @author Otávio Augusto Teixeira
  * @version 1.0
  */
@@ -54,7 +54,7 @@ public class Utils {
         Parent root = null;
 
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlFile+"-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(App.class.getResource(fxmlFile+"-view.fxml"));
             root = loader.load();
             Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
             stage.setTitle(title);
