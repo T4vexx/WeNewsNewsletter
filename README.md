@@ -1,4 +1,4 @@
-![image](https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/a567fa66-dd09-4db7-b8be-4174c09a3d8d)# WeNews
+# WeNews
 Projeto em Java que contém todos os principais pilares da programação orientada a objeto, com visual feito em JavaFX
 
 ## Dependências
