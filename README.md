@@ -3,4 +3,28 @@ Projeto em Java que contém todos os principais pilares da programação orienta
 
 ## Dependências
 Para o programa funcionar primeiramente você deve ter uma banco de dados PostgreSQL rodando na sua máquina
-De tambem editar o arquivo
+Quando a DB estiver rodando você deve editar a linha 37 do código com suas credenciais
+
+```
+public sistema() { con = DBFun.connectToDb("Nome da database","postgres","Senha da db")}
+```
+A versão do Java usada para o projeto foi JAVA 20
+
+## Funcionalidades
+Essa aplicação foi pensada para funcionar como um portal de notícias online
++ Registar e cadastrar novas contas
++ Ver informações do usuário
++ Ler parcialmente uma notícia caso o usuário não seja um inscrito pago
++ Ler a notícia completa caso o usuário seja uma inscrito
++ Comentar na notícia
++ Jornalistas conseguem escrever notícias
++ Escritores conseguem escrever Artigos
++ Editores conseguem editar qualquer artigo ou notícia
++ Usuário consegue comprar uma inscrição
++ Usuário consegue renovar uma inscrição
+
+## Visual
+<div style="display: flex; align: center">
+![image](https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/273ed1f1-cf40-4140-a10a-2fbf86b4206b)
+![image](https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/2a922c89-a4c3-46ed-8730-9d5d4c290367)
+</div>
