@@ -31,3 +31,12 @@ Essa aplicação foi pensada para funcionar como um portal de notícias online
 <div align="center">
   <img height="500em" src="https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/e09776c6-c805-4f30-b907-fbe441ac5460" />
 </div>
+<div align="center">
+  <img height="500em" src="https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/f73f41af-4772-4a89-b91e-1fbeb0315509" />
+</div>
+<div align="center">
+  <img height="500em" src="https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/e793e04f-050a-4023-bc6c-2f30f11def51" />
+</div>
+<div align="center">
+  <img height="500em" src="https://github.com/T4vexx/WeNewsNewsletter/assets/68335367/229e20a0-5c4b-4616-994b-4bab65959b5e" />
+</div>
